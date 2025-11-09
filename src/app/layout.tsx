@@ -4,6 +4,7 @@ import "./globals.css";
 import HomeNav from "./default/home-nav/HomeNav";
 import { ThemeProvider } from "next-themes";
 import HomeFooter from "./default/Footer/HomeFooter";
+import ChatbotComponent from "./setup/ChatbotComponent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -177,6 +178,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <HomeNav />
+          <ChatbotComponent />
           <div className="pt-50 sm:pt-5">{children}</div>
           <HomeFooter />
         </ThemeProvider>

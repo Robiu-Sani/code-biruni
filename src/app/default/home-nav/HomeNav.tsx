@@ -275,7 +275,7 @@ export default function HomeNav() {
             asChild
           >
             <Link
-              href="https://linkedin.com/company/code-biruny"
+              href="https://www.linkedin.com/company/107740161/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

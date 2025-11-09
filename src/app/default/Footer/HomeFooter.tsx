@@ -225,7 +225,7 @@ export default function HomeFooter() {
               {/* Social Links */}
               <div className="flex gap-4">
                 <Link
-                  href="https://linkedin.com/company/code-biruny"
+                  href="https://www.linkedin.com/company/107740161/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-primary/10 p-2 rounded-lg hover:bg-primary/20 transition-colors"
