@@ -121,14 +121,14 @@ export default function ChatbotComponent() {
       {/* Floating Chat Button */}
       {showChatButton && (
         <div className="fixed bottom-6 right-6 z-50 animate-in fade-in duration-300">
-          <Button
-            onClick={openChat}
-            className="rounded-full w-14 h-14 shadow-2xl bg-gradient-to-r from-primary to-gray-100  transition-all duration-200 hover:scale-105 active:scale-95"
-            size="icon"
-          >
-            <Bot className="h-9 w-9" />
-            <span className="sr-only">Open Chat</span>
-          </Button>
+         <Button
+  onClick={openChat}
+  className="rounded-full w-16 h-16 shadow-2xl bg-gradient-to-br from-gray-600 to-gray-800 hover:from-gray-700 hover:to-gray-900 transition-all duration-200 hover:scale-105 active:scale-95 border-2 border-white/20"
+  size="icon"
+>
+  <Bot className="h-8 w-8 text-white" />
+  <span className="sr-only">Open Chat</span>
+</Button>
         </div>
       )}
 
