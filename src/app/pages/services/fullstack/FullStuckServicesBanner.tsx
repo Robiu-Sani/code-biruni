@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function FullStackServicesBanner() {
   const services = [
@@ -229,10 +230,11 @@ export default function FullStackServicesBanner() {
                   <span className="text-sm">30% conversion increase</span>
                 </div>
               </div>
+              <Link  href='/pages/company/contact'>
               <Button variant="outline" className="w-full">
                 View Case Study
                 <ArrowRight className="h-4 w-4 ml-2" />
-              </Button>
+              </Button> </Link>
             </div>
 
             {/* CTA */}
@@ -244,10 +246,12 @@ export default function FullStackServicesBanner() {
                 Let`s discuss how we can help bring your vision to life with our
                 full stack expertise.
               </p>
+              <Link  href='/pages/company/contact'>
               <Button className="w-full">
                 Get a Free Consultation
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,78 +1,51 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
-  CardContent,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import {
   Users,
-  MessageSquare,
   Code,
   Globe,
-  Calendar,
   Trophy,
   BookOpen,
   Shield,
   Mail,
-  Github,
-  Twitter,
   Linkedin,
-  Youtube,
+  Facebook,
+  Github,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Community() {
-  const events = [
-    {
-      name: "Monthly Hackathon",
-      date: "15th June",
-      icon: <Code className="h-5 w-5" />,
-    },
-    {
-      name: "Tech Talk: Next.js 14",
-      date: "22nd June",
-      icon: <MessageSquare className="h-5 w-5" />,
-    },
-    {
-      name: "Open Source Day",
-      date: "5th July",
-      icon: <Github className="h-5 w-5" />,
-    },
-  ];
-
-  const benefits = [
-    { title: "Exclusive Resources", icon: <BookOpen className="h-5 w-5" /> },
-    { title: "Networking Opportunities", icon: <Users className="h-5 w-5" /> },
-    { title: "Career Advancement", icon: <Trophy className="h-5 w-5" /> },
-    { title: "Global Connections", icon: <Globe className="h-5 w-5" /> },
-    { title: "Safe Environment", icon: <Shield className="h-5 w-5" /> },
-  ];
-
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 ">
+    <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
+        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
             Code Biruni Community
           </h1>
           <p className="mx-auto max-w-3xl text-xl text-muted-foreground">
-            Join over 10,000 developers, designers, and tech enthusiasts in our
-            vibrant community. Learn, collaborate, and grow together in a
-            supportive environment.
+            Join our growing community of developers and innovators. Learn,
+            collaborate, and grow together through technology and creativity.
           </p>
         </div>
 
+        {/* 3 Cards Section */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           <Card className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <Users className="h-12 w-12 mb-4 text-blue-600" />
               <CardTitle>Connect</CardTitle>
               <CardDescription>
-                Meet like-minded professionals and build valuable relationships
-                that last.
+                Build valuable relationships and connect with professionals from
+                various tech backgrounds.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -82,8 +55,8 @@ export default function Community() {
               <Code className="h-12 w-12 mb-4 text-purple-600" />
               <CardTitle>Collaborate</CardTitle>
               <CardDescription>
-                Work on exciting projects and contribute to open-source
-                initiatives.
+                Contribute to real-world projects and collaborate with others to
+                bring ideas to life.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -93,8 +66,8 @@ export default function Community() {
               <Trophy className="h-12 w-12 mb-4 text-amber-600" />
               <CardTitle>Grow</CardTitle>
               <CardDescription>
-                Enhance your skills through workshops, hackathons, and
-                mentorship programs.
+                Enhance your skills through events, workshops, and mentorship
+                programs.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -102,65 +75,69 @@ export default function Community() {
 
         <Separator className="my-12" />
 
+        {/* Benefits Section */}
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div>
-            <h2 className="text-3xl font-bold mb-8">Upcoming Events</h2>
-            <div className="space-y-6">
-              {events.map((event, index) => (
-                <Card
-                  key={index}
-                  className="hover:bg-muted/50 transition-colors"
-                >
-                  <CardHeader className="flex flex-row items-center space-x-4 space-y-0">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                      {event.icon}
-                    </div>
-                    <div>
-                      <CardTitle>{event.name}</CardTitle>
-                      <CardDescription className="flex items-center mt-1">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        {event.date}
-                      </CardDescription>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="outline" className="w-full">
-                      Register Now
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-bold mb-8">Community Benefits</h2>
+            <h2 className="text-3xl font-bold mb-8">Why Join Code Biruni?</h2>
             <ul className="space-y-4">
-              {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start space-x-4">
+              {[
+                {
+                  title: "Exclusive Resources",
+                  icon: <BookOpen className="h-5 w-5" />,
+                  desc: "Access tutorials, project templates, and research content to boost your learning.",
+                },
+                {
+                  title: "Networking Opportunities",
+                  icon: <Users className="h-5 w-5" />,
+                  desc: "Meet developers, educators, and entrepreneurs working on innovative ideas.",
+                },
+                {
+                  title: "Global Connections",
+                  icon: <Globe className="h-5 w-5" />,
+                  desc: "Collaborate with tech enthusiasts from around the world.",
+                },
+                {
+                  title: "Safe Environment",
+                  icon: <Shield className="h-5 w-5" />,
+                  desc: "Join a respectful, supportive, and inclusive tech community.",
+                },
+              ].map((b, i) => (
+                <li key={i} className="flex items-start space-x-4">
                   <div className="bg-primary/10 p-2 rounded-full mt-1">
-                    {benefit.icon}
+                    {b.icon}
                   </div>
                   <div>
-                    <h3 className="font-semibold">{benefit.title}</h3>
-                    <p className="text-muted-foreground">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed do eiusmod tempor.
-                    </p>
+                    <h3 className="font-semibold">{b.title}</h3>
+                    <p className="text-muted-foreground">{b.desc}</p>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
+
+          {/* Contact CTA */}
+          <div className="flex flex-col justify-center text-center">
+            <h2 className="text-3xl font-bold mb-6">Get Involved</h2>
+            <p className="text-muted-foreground mb-6">
+              Be part of our mission to make learning and innovation accessible
+              for everyone.
+            </p>
+            <Link href="/pages/company/contact">
+              <Button size="lg" className="hover:scale-105 transition-all">
+                Contact With Us
+              </Button>
+            </Link>
+          </div>
         </div>
 
         <Separator className="my-12" />
 
+        {/* Newsletter */}
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-6">Join Our Newsletter</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground mb-8">
-            Stay updated with the latest news, events, and resources from Code
-            Biruny.
+            Stay updated with new projects, events, and learning resources from
+            Code Biruni.
           </p>
           <div className="flex max-w-md mx-auto gap-2">
             <Input
@@ -175,21 +152,38 @@ export default function Community() {
           </div>
         </div>
 
+        {/* Socials */}
         <div className="flex flex-col items-center">
           <h2 className="text-2xl font-semibold mb-6">Follow Us</h2>
           <div className="flex space-x-4">
-            <Button variant="outline" size="icon">
-              <Github className="h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="icon">
-              <Twitter className="h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="icon">
-              <Linkedin className="h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="icon">
-              <Youtube className="h-5 w-5" />
-            </Button>
+            <a
+              href="https://www.facebook.com/codebiruni/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="icon">
+                <Facebook className="h-5 w-5" />
+              </Button>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/code-biruni/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="outline" size="icon">
+                <Linkedin className="h-5 w-5" />
+              </Button>
+            </a>
+            <a href="mailto:codebiruny@gmail.com">
+              <Button variant="outline" size="icon">
+                <Mail className="h-5 w-5" />
+              </Button>
+            </a>
+            <a href="https://github.com/codebiruni" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon">
+                <Github className="h-5 w-5" />
+              </Button>
+            </a>
           </div>
           <p className="mt-8 text-sm text-muted-foreground">
             © {new Date().getFullYear()} Code Biruni. All rights reserved.

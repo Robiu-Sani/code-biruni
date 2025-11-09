@@ -12,13 +12,14 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function UpComingBanner() {
   const upcomingEvents = [
     {
       title: "Next.js 14 Launch Event",
       type: "Webinar",
-      date: "Oct 15, 2023",
+      date: "Oct 15, 2025",
       time: "2:00 PM EST",
       speaker: "Vercel Team",
       badge: "Live",
@@ -26,7 +27,7 @@ export default function UpComingBanner() {
     {
       title: "React State Management Workshop",
       type: "Workshop",
-      date: "Nov 2, 2023",
+      date: "Nov 2, 2025",
       time: "10:00 AM EST",
       speaker: "Sarah Johnson",
       badge: "Free",
@@ -34,7 +35,7 @@ export default function UpComingBanner() {
     {
       title: "TypeScript Masterclass",
       type: "Course",
-      date: "Dec 5, 2023",
+      date: "Dec 5, 2025",
       time: "9:00 AM EST",
       speaker: "Michael Chen",
       badge: "Pro",
@@ -115,9 +116,7 @@ export default function UpComingBanner() {
                           <span>{event.time}</span>
                         </div>
                       </div>
-                      <Button variant="ghost" size="sm">
-                        Register
-                      </Button>
+                      
                     </div>
                     <div className="flex items-center text-sm text-zinc-500 dark:text-zinc-400 mt-1">
                       <span>With {event.speaker}</span>
@@ -184,15 +183,7 @@ export default function UpComingBanner() {
                 Be the first to know about new content and events.
               </p>
               <div className="flex flex-col gap-2">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="w-full px-3 py-2 border border-zinc-200 dark:border-zinc-700 rounded-md bg-zinc-50 dark:bg-zinc-800"
-                />
-                <Button className="w-full">
-                  Subscribe
-                  <ArrowRight className="h-4 w-4 ml-2" />
-                </Button>
+                
               </div>
             </div>
           </div>
@@ -211,9 +202,11 @@ export default function UpComingBanner() {
                 content and events.
               </p>
             </div>
+            <Link  href='/pages/company/contact'>
             <Button variant="outline" className="shrink-0">
               Join Now
             </Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,65 +1,69 @@
 import { cn } from "@/lib/utils";
 import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
+  IconCode,
   IconEaseInOut,
-  IconHeart,
+  IconCurrencyDollar,
+  IconCloud,
+  IconLayersIntersect,
   IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
+  IconSettingsAutomation,
+  IconHeartHandshake,
 } from "@tabler/icons-react";
 
 export function FeaturesSection() {
   const features = [
     {
-      title: "Built for developers",
+      title: "Smart Web Solutions",
       description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
-      icon: <IconTerminal2 />,
+        "At CodeBiruni, we craft dynamic, responsive, and high-performance websites that elevate your brand online.",
+      icon: <IconCode />,
     },
     {
-      title: "Ease of use",
+      title: "User-Friendly Design",
       description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
+        "Every line of code and pixel is designed to provide an effortless and engaging user experience.",
       icon: <IconEaseInOut />,
     },
     {
-      title: "Pricing like no other",
+      title: "Transparent Pricing",
       description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
+        "We believe in fair, flexible pricing — no hidden fees, no surprises. Just honest value for your investment.",
       icon: <IconCurrencyDollar />,
     },
     {
-      title: "100% Uptime guarantee",
-      description: "We just cannot be taken down by anyone.",
+      title: "Reliable Cloud Infrastructure",
+      description:
+        "Our software runs on secure and scalable cloud systems to ensure stability and 99.9% uptime.",
       icon: <IconCloud />,
     },
     {
-      title: "Multi-tenant Architecture",
-      description: "You can simply share passwords instead of buying new seats",
-      icon: <IconRouteAltLeft />,
+      title: "Integrated Software Ecosystem",
+      description:
+        "We build interconnected systems — from websites to ERP and automation — all under one architecture.",
+      icon: <IconLayersIntersect />,
     },
     {
-      title: "24/7 Customer Support",
+      title: "Dedicated Support Team",
       description:
-        "We are available a 100% of the time. Atleast our AI Agents are.",
+        "Our experts are here for you 24/7 — ready to assist, guide, and ensure your project runs smoothly.",
       icon: <IconHelp />,
     },
     {
-      title: "Money back guarantee",
+      title: "Automation & Innovation",
       description:
-        "If you donot like EveryAI, we will convince you to like us.",
-      icon: <IconAdjustmentsBolt />,
+        "From AI integrations to workflow automation, CodeBiruni empowers businesses with future-ready technology.",
+      icon: <IconSettingsAutomation />,
     },
     {
-      title: "And everything else",
-      description: "I just ran out of copy ideas. Accept my sincere apologies",
-      icon: <IconHeart />,
+      title: "Partnership That Lasts",
+      description:
+        "We don’t just deliver projects — we build long-term partnerships rooted in trust and mutual growth.",
+      icon: <IconHeartHandshake />,
     },
   ];
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto">
       {features.map((feature, index) => (
         <Feature key={feature.title} {...feature} index={index} />
       ))}
@@ -81,7 +85,7 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:border-r  py-10 relative group/feature dark:border-neutral-800",
+        "flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800",
         (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
         index < 4 && "lg:border-b dark:border-neutral-800"
       )}

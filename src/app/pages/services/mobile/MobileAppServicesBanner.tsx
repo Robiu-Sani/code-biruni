@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function MobileAppServicesBanner() {
   const services = [
@@ -286,10 +287,12 @@ export default function MobileAppServicesBanner() {
                   <span className="text-sm">85% retention rate</span>
                 </div>
               </div>
+              <Link  href='/pages/company/contact'>
               <Button variant="outline" className="w-full">
                 View Case Study
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
+              </Link>
             </div>
 
             {/* CTA */}
@@ -301,10 +304,12 @@ export default function MobileAppServicesBanner() {
                 Let`s discuss how we can bring your mobile vision to life with
                 our expertise.
               </p>
+              <Link  href='/pages/company/contact'>
               <Button className="w-full">
                 Get Free Consultation
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
+              </Link>
             </div>
           </div>
         </div>

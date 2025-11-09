@@ -5,7 +5,7 @@ import React from "react";
 export default function ThirdSection() {
   return (
     <div>
-      <div className="container md:mt-[-140px] mt-[-60px] px-2 mx-auto">
+      <div className="container md:mt-[-100px] mt-[-60px] px-2 mx-auto">
         <TextHoverEffect text="Code Biruni" duration={0.2} />
       </div>
       <div className="container px-2 md:mt-[-120px] pt-[30px] mx-auto">

@@ -1,29 +1,21 @@
 import React from "react";
 import {
   Users,
-  Globe,
+  
   Award,
   Code,
-  Clock,
+  
   ArrowRight,
   CheckCircle,
-  BarChart2,
+  
   HeartHandshake,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function AboutUsBanner() {
-  const stats = [
-    {
-      value: "50+",
-      label: "Team Members",
-      icon: <Users className="h-5 w-5" />,
-    },
-    { value: "15+", label: "Countries", icon: <Globe className="h-5 w-5" /> },
-    { value: "5M+", label: "Users", icon: <BarChart2 className="h-5 w-5" /> },
-    { value: "2018", label: "Founded", icon: <Clock className="h-5 w-5" /> },
-  ];
+
 
   const values = [
     {
@@ -62,23 +54,7 @@ export default function AboutUsBanner() {
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-700 shadow-sm text-center"
-            >
-              <div className="flex items-center justify-center mb-2">
-                {stat.icon}
-              </div>
-              <p className="text-3xl font-bold mb-1">{stat.value}</p>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
+     
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Our Values */}
@@ -105,7 +81,7 @@ export default function AboutUsBanner() {
               <h2 className="text-2xl font-semibold mb-4">Our Story</h2>
               <div className="space-y-4 text-zinc-600 dark:text-zinc-300">
                 <p>
-                  Founded in 2018 by a team of frustrated developers, Code
+                  Founded in 2025 by a team of frustrated developers, Code
                   Biruny started as an open-source project to solve common pain
                   points in modern web development.
                 </p>
@@ -128,7 +104,7 @@ export default function AboutUsBanner() {
             <div className="bg-white dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-700 shadow-sm">
               <h2 className="flex items-center text-lg font-semibold mb-4">
                 <Users className="h-4 w-4 mr-2 text-zinc-600 dark:text-zinc-300" />
-                Meet Our Team
+                Meet Our Panel
               </h2>
               <div className="space-y-6 mb-4">
                 <div className="flex items-center space-x-4">
@@ -136,7 +112,7 @@ export default function AboutUsBanner() {
                     <Users className="h-5 w-5 text-zinc-500" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Sarah Johnson</h3>
+                    <h3 className="font-medium">Rifat Rahman</h3>
                     <p className="text-sm text-zinc-500 dark:text-zinc-400">
                       CEO & Co-founder
                     </p>
@@ -147,9 +123,20 @@ export default function AboutUsBanner() {
                     <Code className="h-5 w-5 text-zinc-500" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Michael Chen</h3>
+                    <h3 className="font-medium">Robius Sani</h3>
                     <p className="text-sm text-zinc-500 dark:text-zinc-400">
                       CTO & Co-founder
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
+                    <Award className="h-5 w-5 text-zinc-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium">Jakariya</h3>
+                    <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                      Head of Web-services
                     </p>
                   </div>
                 </div>
@@ -165,13 +152,13 @@ export default function AboutUsBanner() {
                   </div>
                 </div>
               </div>
-              <Button
+              {/* <Button
                 variant="link"
                 className="mt-4 px-0 text-zinc-600 dark:text-zinc-300"
               >
                 View full team
                 <ArrowRight className="h-4 w-4 ml-2" />
-              </Button>
+              </Button> */}
             </div>
 
             {/* Join Us */}
@@ -183,10 +170,12 @@ export default function AboutUsBanner() {
               <p className="text-zinc-600 dark:text-zinc-300 mb-4">
                 We`re always looking for talented people to join our team.
               </p>
+              <Link  href='/pages/company/contact'>
               <Button className="w-full">
                 View Open Positions
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
+              </Link>
             </div>
           </div>
         </div>

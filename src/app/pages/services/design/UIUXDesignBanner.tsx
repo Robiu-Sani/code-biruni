@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function UIUXDesignBanner() {
   const designPrinciples = [
@@ -193,9 +194,11 @@ export default function UIUXDesignBanner() {
                 transaction completion.
               </p>
             </div>
+            <Link  href='/pages/company/contact'>
             <Button variant="outline" className="shrink-0">
               View Case Study
             </Button>
+            </Link>
           </div>
         </div>
       </div>

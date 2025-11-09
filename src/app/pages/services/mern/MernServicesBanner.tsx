@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function MernServicesBanner() {
   const mernServices = [
@@ -237,10 +238,12 @@ export default function MernServicesBanner() {
                   <span className="text-sm">Scaled to 50,000+ users</span>
                 </div>
               </div>
+              <Link  href='/pages/company/contact'>
               <Button variant="outline" className="w-full">
                 Read Case Study
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
+              </Link>
             </div>
 
             {/* MERN Tech Stack */}
@@ -288,10 +291,12 @@ export default function MernServicesBanner() {
                 Let`s build something amazing with the power of full-stack
                 JavaScript.
               </p>
+              <Link  href='/pages/company/contact'>
               <Button className="w-full">
                 Get Free Consultation
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
+              </Link>
             </div>
           </div>
         </div>

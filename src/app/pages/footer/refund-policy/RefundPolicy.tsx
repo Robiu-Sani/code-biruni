@@ -49,7 +49,7 @@ export default function RefundPolicy() {
               <ShieldCheck className="h-6 w-6 mr-2" />
               Refund Policy Overview
             </CardTitle>
-            <CardDescription>Last updated: June 1, 2024</CardDescription>
+            <CardDescription>Last updated: June 1, 2025</CardDescription>
           </CardHeader>
           <CardContent>
             <p className="mb-4 text-muted-foreground">

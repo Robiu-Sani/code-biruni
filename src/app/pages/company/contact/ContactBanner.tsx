@@ -2,9 +2,7 @@ import React from "react";
 import {
   Mail,
   Phone,
-  MessageSquare,
   Clock,
-  ChevronRight,
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,66 +13,65 @@ export default function ContactBanner() {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Support",
-      description: "support@codebiruny.com",
-      action: "Email Us",
+      description: "codebiruny@gmail.com",
+      action: "Send Email",
       responseTime: "Typically within 2 hours",
+      link: "mailto:codebiruny@gmail.com",
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone Support",
-      description: "+1 (555) 123-4567",
+      description: "+8801617688805, +880176407140",
       action: "Call Now",
-      responseTime: "Immediate assistance",
-    },
-    {
-      icon: <MessageSquare className="h-6 w-6" />,
-      title: "Live Chat",
-      description: "Available 24/7",
-      action: "Start Chat",
-      responseTime: "Instant connection",
+      responseTime: "Available during office hours",
+      link: "tel:+8801617688805",
     },
   ];
 
   const supportHours = [
-    { day: "Monday-Friday", hours: "9:00 AM - 6:00 PM EST" },
-    { day: "Saturday", hours: "10:00 AM - 4:00 PM EST" },
-    { day: "Sunday", hours: "Emergency support only" },
+    { day: "Saturday - Thursday", hours: "9:00 AM – 6:00 PM" },
+    { day: "Friday", hours: "Closed" },
   ];
 
   return (
-    <section className="w-full py-16 ">
-      <div className="container mx-auto px-4 rounded-lg">
+    <section className="w-full py-16">
+      <div className="container mx-auto px-4">
         <div className="bg-white dark:bg-zinc-900 rounded-2xl p-8 md:p-12 border border-zinc-200 dark:border-zinc-700 shadow-sm">
-          {/* Main CTA */}
+          
+          {/* CTA Section */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
             <div className="text-center md:text-left">
               <Badge variant="outline" className="mb-4">
                 <Zap className="h-3 w-3 mr-2" />
-                Get Support
+                Get in Touch
               </Badge>
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">
-                Ready to start your project?
+                Need help or want to collaborate?
               </h2>
               <p className="text-zinc-600 dark:text-zinc-300 max-w-lg">
-                Our team is here to help you bring your ideas to life. Get in
-                touch today!
+                Our CodeBiruni support team is ready to assist you with your
+                technical or business inquiries. Reach out today!
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="gap-2">
-                <Mail className="h-5 w-5" />
-                Email Us
-              </Button>
-              <Button variant="outline" size="lg" className="gap-2">
-                <Phone className="h-5 w-5" />
-                Call Now
-              </Button>
+              <a href="mailto:codebiruny@gmail.com">
+                <Button size="lg" className="gap-2">
+                  <Mail className="h-5 w-5" />
+                  Email Us
+                </Button>
+              </a>
+              <a href="tel:+8801617688805">
+                <Button variant="outline" size="lg" className="gap-2">
+                  <Phone className="h-5 w-5" />
+                  Call Now
+                </Button>
+              </a>
             </div>
           </div>
 
           {/* Contact Methods Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {contactMethods.map((method, index) => (
               <div
                 key={index}
@@ -91,9 +88,11 @@ export default function ContactBanner() {
                   <Clock className="h-3 w-3 mr-2" />
                   {method.responseTime}
                 </p>
-                <Button variant="outline" className="w-full">
-                  {method.action}
-                </Button>
+                <a href={method.link} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="w-full">
+                    {method.action}
+                  </Button>
+                </a>
               </div>
             ))}
           </div>
@@ -114,10 +113,12 @@ export default function ContactBanner() {
                 </div>
               ))}
             </div>
-            <Button variant="link" className="mt-4 px-0 text-primary">
-              View emergency protocols
-              <ChevronRight className="h-4 w-4 ml-2" />
-            </Button>
+            {/* <a href="/pages/company/contact">
+              <Button variant="link" className="mt-4 px-0 text-primary">
+                Visit our contact page
+                <ChevronRight className="h-4 w-4 ml-2" />
+              </Button>
+            </a> */}
           </div>
         </div>
       </div>

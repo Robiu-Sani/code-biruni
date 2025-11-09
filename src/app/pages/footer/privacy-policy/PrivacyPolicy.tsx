@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
               <Lock className="h-6 w-6 mr-2" />
               Information We Collect
             </CardTitle>
-            <CardDescription>Effective Date: June 1, 2024</CardDescription>
+            <CardDescription>Effective Date: June 1, 2025</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-6">

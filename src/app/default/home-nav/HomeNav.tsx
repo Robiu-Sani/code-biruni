@@ -28,17 +28,25 @@ import { VscAzure, VscServerEnvironment, VscCode } from "react-icons/vsc";
 import { FiUsers, FiMail } from "react-icons/fi";
 import Image from "next/image";
 import SearchBox from "../SearchBox";
-// FiLayers, TabletSmartphone,
 
 export default function HomeNav() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Ensure theme is only applied after mounting to avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
+    
+    // Handle scroll effect
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -47,7 +55,10 @@ export default function HomeNav() {
 
   const toggleSearch = () => {
     setSearchOpen(!searchOpen);
-    console.log("Search open:", !searchOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
   };
 
   const servicesItems = [
@@ -75,18 +86,6 @@ export default function HomeNav() {
       description: "Custom business solutions",
       icon: <VscAzure className="h-5 w-5" />,
     },
-    // {
-    //   title: "Mobile App Development",
-    //   href: "/pages/services/mobile",
-    //   description: "User-friendly mobile applications",
-    //   icon: <TabletSmartphone className="h-5 w-5" />,
-    // },
-    // {
-    //   title: "UI/UX Design",
-    //   href: "/pages/services/design",
-    //   description: "Beautiful, intuitive interfaces",
-    //   icon: <FiLayers className="h-5 w-5" />,
-    // },
   ];
 
   const companyItems = [
@@ -102,12 +101,6 @@ export default function HomeNav() {
       description: "Meet the talented people",
       icon: <FiUsers className="h-5 w-5" />,
     },
-    // {
-    //   title: "Careers",
-    //   href: "/pages/company/careers",
-    //   description: "Join our growing team",
-    //   icon: <FiUsers className="h-5 w-5" />,
-    // },
     {
       title: "Contact",
       href: "/pages/company/contact",
@@ -117,30 +110,35 @@ export default function HomeNav() {
   ];
 
   return (
-    <nav className="fixed z-[500] w-full top-0 bg-background/80 backdrop-blur-sm border-b">
+    <nav className={`fixed z-50 w-full top-0 transition-all duration-300 ${
+      scrolled 
+        ? "bg-background/95 backdrop-blur-md border-b shadow-sm" 
+        : "bg-background/80 backdrop-blur-sm border-b"
+    }`}>
       {searchOpen && <SearchBox toggleSearch={toggleSearch} />}
       <div className="container flex justify-between items-center mx-auto px-4 py-3">
         {/* Logo and Main Nav */}
-        <div className="flex items-center gap-10">
-          <Link href="/" className="flex items-center gap-2">
+        <div className="flex items-center gap-8 lg:gap-10">
+          <Link href="/" className="flex items-center gap-3" onClick={closeMobileMenu}>
             <Image
-              src={`/logo.jpg`}
-              alt="code-biruny logo"
-              width={50}
-              height={50}
-              className="w-8 h-8 rounded-md"
+              src="/logo.jpg"
+              alt="Code Biruni logo"
+              width={40}
+              height={40}
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-md transition-transform hover:scale-105"
+              priority
             />
-            <span className="font-bold hidden sm:block text-xl">
+            <span className="font-bold text-xl sm:text-2xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               Code Biruni
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <NavigationMenu className="hidden md:block">
+          <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <Link href="/" legacyBehavior passHref>
+                  <NavigationMenuLink className={`${navigationMenuTriggerStyle()} font-medium`}>
                     Home
                   </NavigationMenuLink>
                 </Link>
@@ -148,40 +146,51 @@ export default function HomeNav() {
 
               {/* Services Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
+                <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} font-medium`}>
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid gap-3 p-4 md:w-[500px] lg:w-[600px] lg:grid-cols-2">
-                    <div className="row-span-4">
-                      <NavigationMenuLink href={`/pages/services/our-services`}>
-                        <div className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md">
-                          <Album className="h-32 w-32" />
-                          <div className="mb-2 mt-4 text-lg font-medium">
-                            Our Services
+                  <div className="grid gap-3 p-6 w-[500px] lg:w-[600px] lg:grid-cols-2">
+                    <div className="row-span-3">
+                      <NavigationMenuLink asChild>
+                        <Link href="/pages/services/our-services">
+                          <div className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-br from-primary/10 to-secondary/10 p-6 no-underline outline-none focus:shadow-md transition-all hover:shadow-lg border">
+                            <div className="flex items-center gap-3 mb-4">
+                              <Album className="h-12 w-12 text-primary" />
+                              <div>
+                                <div className="text-lg font-bold">Our Services</div>
+                                <p className="text-sm text-muted-foreground mt-1">
+                                  Comprehensive digital solutions
+                                </p>
+                              </div>
+                            </div>
+                            <p className="text-sm leading-tight text-muted-foreground">
+                              Tailored digital solutions to drive your business growth and success.
+                            </p>
                           </div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            Comprehensive digital solutions tailored to your
-                            business needs.
-                          </p>
-                        </div>
+                        </Link>
                       </NavigationMenuLink>
                     </div>
                     {servicesItems.map((item) => (
-                      <NavigationMenuLink
-                        key={item.title}
-                        href={item.href}
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="flex items-center gap-2">
-                          {item.icon}
-                          <span className="text-sm font-medium leading-none">
-                            {item.title}
-                          </span>
-                        </div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground ml-7">
-                          {item.description}
-                        </p>
+                      <NavigationMenuLink key={item.title} asChild>
+                        <Link
+                          href={item.href}
+                          className="block select-none space-y-1 rounded-lg p-4 leading-none no-underline outline-none transition-all hover:bg-accent hover:shadow-md focus:bg-accent"
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="bg-primary/10 p-2 rounded-lg">
+                              {item.icon}
+                            </div>
+                            <div>
+                              <div className="text-sm font-semibold leading-none">
+                                {item.title}
+                              </div>
+                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+                                {item.description}
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
                       </NavigationMenuLink>
                     ))}
                   </div>
@@ -190,11 +199,11 @@ export default function HomeNav() {
 
               {/* Company Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
+                <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} font-medium`}>
                   Company
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[300px] gap-1 p-4">
+                  <ul className="grid w-[350px] gap-2 p-4">
                     {companyItems.map((item) => (
                       <ListItem
                         key={item.title}
@@ -210,15 +219,16 @@ export default function HomeNav() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/pages/pricing">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <Link href="/pages/pricing" legacyBehavior passHref>
+                  <NavigationMenuLink className={`${navigationMenuTriggerStyle()} font-medium`}>
                     Pricing
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+              
               <NavigationMenuItem>
-                <Link href="/pages/blog">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <Link href="/pages/blog" legacyBehavior passHref>
+                  <NavigationMenuLink className={`${navigationMenuTriggerStyle()} font-medium`}>
                     Blog
                   </NavigationMenuLink>
                 </Link>
@@ -228,26 +238,26 @@ export default function HomeNav() {
         </div>
 
         {/* Right Side Controls */}
-        <div className="flex items-center gap-1 sm:gap-4">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Search */}
-          <div className="relative">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8"
-              onClick={toggleSearch}
-            >
-              <Search className="h-4 w-4" />
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-9 w-9 sm:h-10 sm:w-10"
+            onClick={toggleSearch}
+            aria-label="Search"
+          >
+            <Search className="h-4 w-4" />
+          </Button>
 
-          {/* Theme Toggle - Only render when mounted to avoid hydration mismatch */}
+          {/* Theme Toggle */}
           {mounted && (
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8"
+              className="h-9 w-9 sm:h-10 sm:w-10"
               onClick={toggleTheme}
+              aria-label="Toggle theme"
             >
               {theme === "dark" ? (
                 <Sun className="h-4 w-4" />
@@ -258,18 +268,19 @@ export default function HomeNav() {
           )}
 
           {/* LinkedIn */}
-          <Button variant="ghost" size="sm" asChild>
+          <Button 
+            variant="ghost" 
+            size="icon"
+            className="h-9 w-9 sm:h-10 sm:w-10" 
+            asChild
+          >
             <Link
               href="https://linkedin.com/company/code-biruny"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
-              <Linkedin />
-            </Link>
-          </Button>
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="/pages/login" rel="noopener noreferrer">
-              Login
+              <Linkedin className="h-4 w-4" />
             </Link>
           </Button>
 
@@ -277,8 +288,9 @@ export default function HomeNav() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="lg:hidden h-9 w-9 sm:h-10 sm:w-10"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
               <X className="h-5 w-5" />
@@ -296,28 +308,35 @@ export default function HomeNav() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden bg-background border-t"
+            className="lg:hidden overflow-hidden bg-background/95 backdrop-blur-md border-t"
           >
-            <div className="px-4 py-2 space-y-2">
-              <MobileNavItem href="/" onClick={() => setMobileMenuOpen(false)}>
+            <div className="px-4 py-4 space-y-1">
+              <MobileNavItem href="/" onClick={closeMobileMenu}>
                 Home
               </MobileNavItem>
 
               <MobileNavDropdown
                 title="Services"
                 items={servicesItems}
-                onItemClick={() => setMobileMenuOpen(false)}
+                onItemClick={closeMobileMenu}
               />
 
               <MobileNavDropdown
                 title="Company"
                 items={companyItems}
-                onItemClick={() => setMobileMenuOpen(false)}
+                onItemClick={closeMobileMenu}
               />
 
               <MobileNavItem
-                href="/blog"
-                onClick={() => setMobileMenuOpen(false)}
+                href="/pages/pricing"
+                onClick={closeMobileMenu}
+              >
+                Pricing
+              </MobileNavItem>
+
+              <MobileNavItem
+                href="/pages/blog"
+                onClick={closeMobileMenu}
               >
                 Blog
               </MobileNavItem>
@@ -346,12 +365,16 @@ const ListItem = ({
       <NavigationMenuLink asChild>
         <Link
           href={href}
-          className="flex items-start gap-3 rounded-lg p-3 hover:bg-accent transition-colors"
+          className="flex items-start gap-4 rounded-lg p-3 hover:bg-accent transition-all duration-200 group"
         >
-          {icon && <span className="mt-0.5">{icon}</span>}
-          <div>
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          {icon && (
+            <div className="bg-primary/10 p-2 rounded-lg group-hover:scale-110 transition-transform">
+              {icon}
+            </div>
+          )}
+          <div className="flex-1">
+            <div className="text-sm font-semibold leading-none mb-1">{title}</div>
+            <p className="text-sm leading-snug text-muted-foreground">
               {children}
             </p>
           </div>
@@ -374,7 +397,7 @@ const MobileNavItem = ({
   return (
     <Link
       href={href}
-      className="block py-2 px-3 rounded-md hover:bg-accent transition-colors"
+      className="flex items-center py-3 px-4 rounded-lg hover:bg-accent transition-colors font-medium"
       onClick={onClick}
     >
       {children}
@@ -395,28 +418,40 @@ const MobileNavDropdown = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="py-2 px-3">
+    <div className="py-1 px-4">
       <button
-        className="flex items-center justify-between w-full py-2 rounded-md hover:bg-accent transition-colors"
+        className="flex items-center justify-between w-full py-3 px-4 rounded-lg hover:bg-accent transition-colors font-medium"
         onClick={() => setOpen(!open)}
       >
         {title}
         <ChevronDown
-          className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-4 w-4 transition-transform duration-200 ${
+            open ? "rotate-180" : ""
+          }`}
         />
       </button>
       {open && (
-        <div className="mt-2 space-y-1 pl-4">
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          className="mt-1 space-y-1 pl-6 border-l-2 border-primary/20"
+        >
           {items.map((item) => (
             <MobileNavItem
               key={item.href}
               href={item.href}
               onClick={onItemClick}
             >
-              {item.title}
+              <div>
+                <div className="font-medium">{item.title}</div>
+                <div className="text-sm text-muted-foreground">
+                  {item.description}
+                </div>
+              </div>
             </MobileNavItem>
           ))}
-        </div>
+        </motion.div>
       )}
     </div>
   );

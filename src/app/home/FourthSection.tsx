@@ -19,33 +19,35 @@ export default function FourthSection() {
               <Rocket className="w-14 h-14" strokeWidth={1.5} />
             </div>
             <h2 className="text-3xl font-bold tracking-tight">
-              Why Choose Code-Biruny?
+              Why Choose CodeBiruni?
             </h2>
           </div>
 
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            We deliver cutting-edge solutions that propel your business forward.
-            Our expertise in modern technologies ensures your digital
-            transformation is seamless and impactful.
+            At <span className="font-semibold text-primary">CodeBiruni</span>,
+            we don’t just build software — we build digital growth. Our mission
+            is to empower businesses through modern web development, intelligent
+            automation, and cloud-powered innovation that transforms ideas into
+            impactful realities.
           </p>
 
           <ul className="space-y-3">
             <li className="flex items-center gap-3">
               <Sparkles className="w-5 h-5 text-primary" />
               <span className="text-gray-700 dark:text-gray-200">
-                Custom-tailored software solutions
+                Tailored web & software solutions that fit your goals
               </span>
             </li>
             <li className="flex items-center gap-3">
               <Sparkles className="w-5 h-5 text-primary" />
               <span className="text-gray-700 dark:text-gray-200">
-                Agile development process
+                Agile, transparent, and result-driven development
               </span>
             </li>
             <li className="flex items-center gap-3">
               <Sparkles className="w-5 h-5 text-primary" />
               <span className="text-gray-700 dark:text-gray-200">
-                Dedicated support & maintenance
+                Ongoing support, maintenance, and scaling assistance
               </span>
             </li>
           </ul>
@@ -56,7 +58,7 @@ export default function FourthSection() {
           <div className="relative h-full min-h-[300px] md:min-h-[400px] rounded-xl overflow-hidden bg-gradient-to-br from-gray-200/50 to-gray-300/30 dark:from-zinc-800/70 dark:to-zinc-900/50 border border-gray-200 dark:border-zinc-700/50">
             <Image
               src={`/whychoesus.png`}
-              alt="Code Biruni why choose us image"
+              alt="Why choose CodeBiruni - web & software development"
               width={800}
               height={800}
               className="w-full h-full object-cover"
@@ -75,7 +77,7 @@ export default function FourthSection() {
             <div className="relative h-48 w-full mb-4 rounded-lg overflow-hidden">
               <Image
                 src={`/card1.avif`}
-                alt="Web Development Services"
+                alt="CodeBiruni web development services"
                 width={400}
                 height={250}
                 className="w-full h-full object-cover"
@@ -86,8 +88,9 @@ export default function FourthSection() {
               <h3 className="text-xl font-semibold">Web Development</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-300">
-              Modern, responsive websites and web applications built with
-              cutting-edge technologies to elevate your online presence.
+              We design and develop visually stunning, performance-optimized
+              websites that engage users and drive business success — from
+              landing pages to full-scale platforms.
             </p>
           </div>
         </div>
@@ -100,7 +103,7 @@ export default function FourthSection() {
             <div className="relative h-48 w-full mb-4 rounded-lg overflow-hidden">
               <Image
                 src={`/card2.jpg`}
-                alt="Software Development Services"
+                alt="CodeBiruni software development solutions"
                 width={400}
                 height={250}
                 className="w-full h-full object-cover"
@@ -108,11 +111,12 @@ export default function FourthSection() {
             </div>
             <div className="flex items-center gap-3 mb-3">
               <Code className="w-6 h-6 text-primary" />
-              <h3 className="text-xl font-semibold">Software Solutions</h3>
+              <h3 className="text-xl font-semibold">Software Development</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-300">
-              Custom software tailored to your business needs, designed to
-              streamline operations and boost productivity.
+              From management systems to SaaS platforms, we deliver secure,
+              scalable, and custom-built software tailored to your exact
+              workflow and vision.
             </p>
           </div>
         </div>
@@ -125,7 +129,7 @@ export default function FourthSection() {
             <div className="relative h-48 w-full mb-4 rounded-lg overflow-hidden">
               <Image
                 src={`/card3.webp`}
-                alt="Cloud Services"
+                alt="CodeBiruni cloud development services"
                 width={400}
                 height={250}
                 className="w-full h-full object-cover"
@@ -133,11 +137,12 @@ export default function FourthSection() {
             </div>
             <div className="flex items-center gap-3 mb-3">
               <Server className="w-6 h-6 text-primary" />
-              <h3 className="text-xl font-semibold">Cloud Services</h3>
+              <h3 className="text-xl font-semibold">Cloud Integration</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-300">
-              Scalable cloud solutions to ensure your business stays agile,
-              secure, and always available.
+              Empower your business with cloud-based scalability and security.
+              We deploy solutions that grow with your needs — fast, reliable,
+              and globally accessible.
             </p>
           </div>
         </div>

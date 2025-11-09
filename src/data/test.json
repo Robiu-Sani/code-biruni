@@ -1,0 +1,1214 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Afghanistan",
+        "name": "Afghanistan",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [61.21081709172573, 35.650072333309218]
+          ]
+        ]
+      }
+    },
+    
+    
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Macedonia",
+        "name": "Macedonia",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [20.59023, 41.85541]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "admin": "Mali", "name": "Mali", "continent": "Africa" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-12.170750291380299, 14.616834214735503]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Myanmar",
+        "name": "Myanmar",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [99.543309360759281, 20.186597601802056]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Montenegro",
+        "name": "Montenegro",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [19.801613396898681, 42.500093492190835]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Mongolia",
+        "name": "Mongolia",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [87.751264276076697, 49.297197984405479]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Mozambique",
+        "name": "Mozambique",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [34.559989047999345, -11.520020033415923]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Mauritania",
+        "name": "Mauritania",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-12.170750291380299, 14.616834214735503]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Malawi",
+        "name": "Malawi",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [34.559989047999345, -11.520020033415923]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Malaysia",
+        "name": "Malaysia",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [118.618320754064825, 4.47820241944754]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Namibia",
+        "name": "Namibia",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [16.344976840895239, -28.576705010697697]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "New Caledonia",
+        "name": "New Caledonia",
+        "continent": "Australia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [165.779989862326346, -21.080004978115621]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Niger",
+        "name": "Niger",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [2.154473504249949, 11.940150051313422]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Nigeria",
+        "name": "Nigeria",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [8.500287713259693, 4.771982937026847]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Nicaragua",
+        "name": "Nicaragua",
+        "continent": "North America"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-85.712540452807289, 11.088444932494822]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Netherlands",
+        "name": "Netherlands",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [6.074182570020922, 53.51040334737813]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Norway",
+        "name": "Norway",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [25.447625359811887, 80.407340399894494]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "admin": "Nepal", "name": "Nepal", "continent": "Asia" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [88.120440708369841, 27.876541652939586]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "New Zealand",
+        "name": "New Zealand",
+        "continent": "Australia"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [174.612008905330526, -36.156397393540537]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "admin": "Oman", "name": "Oman", "continent": "Asia" },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [56.391421339753393, 25.895990708921254]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Pakistan",
+        "name": "Pakistan",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [75.158027785140902, 37.13303091078911]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Panama",
+        "name": "Panama",
+        "continent": "North America"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-77.881571417945239, 7.223771267114783]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Peru",
+        "name": "Peru",
+        "continent": "South America"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-69.590423753524036, -17.580011895419329]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Philippines",
+        "name": "Philippines",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          
+          [
+            [
+              [121.321308221523566, 18.504064642811013]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Papua New Guinea",
+        "name": "Papua New Guinea",
+        "continent": "Australia"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [153.14003787659874, -4.499983412294113]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Poland",
+        "name": "Poland",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [15.016995883858666, 51.106674099321566]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Puerto Rico",
+        "name": "Puerto Rico",
+        "continent": "North America"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-66.2824344550082, 18.51476166429536]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "North Korea",
+        "name": "Dem. Rep. Korea",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [130.640015903852401, 42.39500946712527]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Portugal",
+        "name": "Portugal",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-9.034817674180244, 41.880570583659669]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Paraguay",
+        "name": "Paraguay",
+        "continent": "South America"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-62.685057135657871, -22.24902922942238]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Palestine",
+        "name": "Palestine",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [35.545665317534535, 32.393992011030569]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "admin": "Qatar", "name": "Qatar", "continent": "Asia" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [50.810108270069563, 24.754742539971371]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Romania",
+        "name": "Romania",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [22.710531447040488, 47.882193915389394]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Russia",
+        "name": "Russia",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+         
+          [
+            [
+              [99.93976, 78.88094]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Rwanda",
+        "name": "Rwanda",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [30.419104852019235, -1.134659112150416]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Western Sahara",
+        "name": "W. Sahara",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-8.794883999049075, 27.120696316022503]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Saudi Arabia",
+        "name": "Saudi Arabia",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [42.779332309750963, 16.34789134364868]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Sudan",
+        "name": "Sudan",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [33.963392794971178, 9.464285229420623]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "South Sudan",
+        "name": "S. Sudan",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [33.963392794971178, 9.464285229420623]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Senegal",
+        "name": "Senegal",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-16.713728807023468, 13.594958604379853]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Solomon Islands",
+        "name": "Solomon Is.",
+        "continent": "Australia"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          
+          [
+            [
+              [157.53842573468927, -7.347819919466928]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Sierra Leone",
+        "name": "Sierra Leone",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-11.438779466182053, 6.785916856305746]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "El Salvador",
+        "name": "El Salvador",
+        "continent": "North America"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-87.793111131526558, 13.384480495655051]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Somaliland",
+        "name": "Somaliland",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.938129510296491, 9.451748968946672]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Somalia",
+        "name": "Somalia",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [49.72862, 11.5789]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Republic of Serbia",
+        "name": "Serbia",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [20.874312778413408, 45.416375433934306]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Suriname",
+        "name": "Suriname",
+        "continent": "South America"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-57.147436489476874, 5.973149929219161]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Slovakia",
+        "name": "Slovakia",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [18.85314415861361, 49.496229763377634]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Slovenia",
+        "name": "Slovenia",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [13.806475457421524, 46.509306138691201]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Sweden",
+        "name": "Sweden",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [22.183173455501922, 65.723740546320158]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Swaziland",
+        "name": "Swaziland",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [32.071665480281062, -26.733820082304902]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "admin": "Syria", "name": "Syria", "continent": "Asia" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [38.792340529136077, 33.378686428352218]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "admin": "Chad", "name": "Chad", "continent": "Africa" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [14.495787387762899, 12.859396267137353]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "admin": "Togo", "name": "Togo", "continent": "Africa" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [1.865240512712318, 6.14215770102973]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Thailand",
+        "name": "Thailand",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [102.58493248902667, 12.186594956913279]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Tajikistan",
+        "name": "Tajikistan",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [71.014198032520156, 40.244365546218226]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Turkmenistan",
+        "name": "Turkmenistan",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [61.21081709172573, 35.650072333309218]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "East Timor",
+        "name": "Timor-Leste",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [124.96868248911619, -8.892790215697081]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Trinidad and Tobago",
+        "name": "Trinidad and Tobago",
+        "continent": "North America"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-61.68, 10.76]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Tunisia",
+        "name": "Tunisia",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [9.482139926805273, 30.307556057246181]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Turkey",
+        "name": "Turkey",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+        
+          [
+            [
+              [27.192376743282406, 40.690565700842448]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Taiwan",
+        "name": "Taiwan",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [121.777817824389899, 24.394273586519393]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "United Republic of Tanzania",
+        "name": "Tanzania",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [33.903711197104592, -0.95]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Uganda",
+        "name": "Uganda",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [31.86617, -1.02736]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Ukraine",
+        "name": "Ukraine",
+        "continent": "Europe"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [31.78599816257158, 52.10167796488544]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Uruguay",
+        "name": "Uruguay",
+        "continent": "South America"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-57.625133429582945, -30.216294854454258]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "United States of America",
+        "name": "United States",
+        "continent": "North America"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+        
+          [
+            [
+              [-155.067790290324211, 71.147776394323685]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Uzbekistan",
+        "name": "Uzbekistan",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [66.518606805288655, 37.362784328758785]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Venezuela",
+        "name": "Venezuela",
+        "continent": "South America"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-71.331583624950284, 11.776284084515805]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Vietnam",
+        "name": "Vietnam",
+        "continent": "Asia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [108.050180291782908, 21.552379869060111]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Vanuatu",
+        "name": "Vanuatu",
+        "continent": "Australia"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [167.844876743845077, -16.466333103097153]
+            ]
+          ],
+          [
+            [
+              [167.107712437201485, -14.933920179913951]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "admin": "Yemen", "name": "Yemen", "continent": "Asia" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [53.108572625547502, 16.651051133688949]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "South Africa",
+        "name": "South Africa",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [31.521001417778869, -29.257386976846245]
+          ],
+          [
+            [28.978262566857236, -28.955596612261708]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Zambia",
+        "name": "Zambia",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [32.759375441221316, -9.230599053589058]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "admin": "Zimbabwe",
+        "name": "Zimbabwe",
+        "continent": "Africa"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [31.191409132621278, -22.251509698172395]
+          ]
+        ]
+      }
+    }
+  ]
+}

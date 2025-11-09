@@ -1,5 +1,6 @@
-"use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
 import React from "react";
 import { useForm } from "react-hook-form";
 import {
@@ -7,10 +8,10 @@ import {
   Phone,
   MapPin,
   Clock,
-  MessageSquare,
   Send,
   ChevronRight,
   Users,
+  MessageSquare,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,16 +28,14 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
-// Form validation schema
+// Validation schema
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Invalid email address" }),
   company: z.string().optional(),
   contactMethod: z.enum(["email", "phone", "whatsapp"]),
   phone: z.string().optional(),
-  message: z
-    .string()
-    .min(10, { message: "Message must be at least 10 characters" }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
   urgency: z.enum(["low", "medium", "high"]),
 });
 
@@ -61,37 +60,37 @@ export default function ContactPage() {
     alert("Thank you for your message! We'll contact you soon.");
   };
 
+  // Real contact info
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6 text-blue-500" />,
-      title: "Email Us",
-      description: "For general inquiries and support",
-      details: "hello@codebiruny.com",
+      title: "Email Support",
+      description: "General inquiries and support",
+      details: "codebiruny@gmail.com",
       action: "Send Email",
-      href: "mailto:hello@codebiruny.com",
+      href: "mailto:codebiruny@gmail.com",
     },
     {
       icon: <Phone className="h-6 w-6 text-green-500" />,
-      title: "Call Us",
-      description: "Speak directly with our team",
-      details: "+1 (555) 123-4567",
+      title: "Phone Support",
+      description: "Call us during office hours",
+      details: "+8801617688805, +880176407140",
       action: "Call Now",
-      href: "tel:+15551234567",
+      href: "tel:+8801617688805",
     },
     {
       icon: <MapPin className="h-6 w-6 text-red-500" />,
       title: "Visit Us",
-      description: "Our headquarters location",
-      details: "123 Tech Street, San Francisco, CA 94107",
+      description: "Headquarters location",
+      details: "Cumilla, Bangladesh",
       action: "Get Directions",
-      href: "https://maps.google.com",
+      href: "https://www.google.com/maps",
     },
   ];
 
   const supportHours = [
-    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM EST" },
-    { day: "Saturday", hours: "10:00 AM - 4:00 PM EST" },
-    { day: "Sunday", hours: "Closed" },
+    { day: "Saturday - Thursday", hours: "9:00 AM – 6:00 PM" },
+    { day: "Friday", hours: "Closed" },
   ];
 
   return (
@@ -102,19 +101,18 @@ export default function ContactPage() {
           Get in Touch
         </h1>
         <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-          Have questions or want to discuss a project? Reach out to our team -
-          we`d love to hear from you.
+          Have questions or want to discuss a project? Reach out to our team —
+          we’d love to hear from you.
         </p>
       </section>
 
-      <div className="grid md:grid-cols-2 gap-12">
+      <div className="grid  gap-12">
         {/* Contact Form */}
-        <Card className="border-primary/20">
+        <Card className="hidden border-primary/20">
           <CardHeader>
             <CardTitle className="text-2xl">Send Us a Message</CardTitle>
             <CardDescription>
-              Fill out the form below and we`ll get back to you as soon as
-              possible.
+              Fill out the form and we`ll get back to you promptly.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -128,11 +126,7 @@ export default function ContactPage() {
                     {...register("name")}
                     className={errors.name ? "border-red-500" : ""}
                   />
-                  {errors.name && (
-                    <p className="text-sm text-red-500">
-                      {errors.name.message}
-                    </p>
-                  )}
+                  {errors.name && <p className="text-sm text-red-500">{errors.name.message}</p>}
                 </div>
 
                 <div className="space-y-2">
@@ -143,67 +137,43 @@ export default function ContactPage() {
                     {...register("email")}
                     className={errors.email ? "border-red-500" : ""}
                   />
-                  {errors.email && (
-                    <p className="text-sm text-red-500">
-                      {errors.email.message}
-                    </p>
-                  )}
+                  {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
                 </div>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="company">Company</Label>
-                <Input
-                  id="company"
-                  placeholder="Your company name"
-                  {...register("company")}
-                />
+                <Input id="company" placeholder="Your company" {...register("company")} />
               </div>
 
               <div className="space-y-2">
                 <Label>Preferred Contact Method *</Label>
-                <RadioGroup
-                  defaultValue="email"
-                  className="grid grid-cols-3 gap-4"
-                  {...register("contactMethod")}
-                >
+                <RadioGroup defaultValue="email" className="grid grid-cols-3 gap-4" {...register("contactMethod")}>
                   <div>
-                    <RadioGroupItem
-                      value="email"
-                      id="email-method"
-                      className="peer sr-only"
-                    />
+                    <RadioGroupItem value="email" id="email-method" className="peer sr-only" />
                     <Label
                       htmlFor="email-method"
-                      className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-checked:border-primary"
                     >
                       <Mail className="mb-2 h-6 w-6" />
                       Email
                     </Label>
                   </div>
                   <div>
-                    <RadioGroupItem
-                      value="phone"
-                      id="phone-method"
-                      className="peer sr-only"
-                    />
+                    <RadioGroupItem value="phone" id="phone-method" className="peer sr-only" />
                     <Label
                       htmlFor="phone-method"
-                      className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-checked:border-primary"
                     >
                       <Phone className="mb-2 h-6 w-6" />
                       Phone
                     </Label>
                   </div>
                   <div>
-                    <RadioGroupItem
-                      value="whatsapp"
-                      id="whatsapp-method"
-                      className="peer sr-only"
-                    />
+                    <RadioGroupItem value="whatsapp" id="whatsapp-method" className="peer sr-only" />
                     <Label
                       htmlFor="whatsapp-method"
-                      className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-checked:border-primary"
                     >
                       <MessageSquare className="mb-2 h-6 w-6" />
                       WhatsApp
@@ -217,37 +187,23 @@ export default function ContactPage() {
                   <Label htmlFor="phone">Phone Number *</Label>
                   <Input
                     id="phone"
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+8801617688805"
                     {...register("phone")}
                     className={errors.phone ? "border-red-500" : ""}
                   />
-                  {errors.phone && (
-                    <p className="text-sm text-red-500">
-                      {errors.phone.message}
-                    </p>
-                  )}
+                  {errors.phone && <p className="text-sm text-red-500">{errors.phone.message}</p>}
                 </div>
               )}
 
               <div className="space-y-2">
                 <Label>Urgency Level</Label>
-                <RadioGroup
-                  defaultValue="medium"
-                  className="flex gap-4"
-                  {...register("urgency")}
-                >
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="low" id="low-urgency" />
-                    <Label htmlFor="low-urgency">Low</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="medium" id="medium-urgency" />
-                    <Label htmlFor="medium-urgency">Medium</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="high" id="high-urgency" />
-                    <Label htmlFor="high-urgency">High</Label>
-                  </div>
+                <RadioGroup defaultValue="medium" className="flex gap-4" {...register("urgency")}>
+                  {["low", "medium", "high"].map((level) => (
+                    <div key={level} className="flex items-center space-x-2">
+                      <RadioGroupItem value={level} id={`${level}-urgency`} />
+                      <Label htmlFor={`${level}-urgency`}>{level.charAt(0).toUpperCase() + level.slice(1)}</Label>
+                    </div>
+                  ))}
                 </RadioGroup>
               </div>
 
@@ -259,11 +215,7 @@ export default function ContactPage() {
                   className="min-h-[120px]"
                   {...register("message")}
                 />
-                {errors.message && (
-                  <p className="text-sm text-red-500">
-                    {errors.message.message}
-                  </p>
-                )}
+                {errors.message && <p className="text-sm text-red-500">{errors.message.message}</p>}
               </div>
 
               <Button type="submit" className="w-full" size="lg">
@@ -274,26 +226,20 @@ export default function ContactPage() {
           </CardContent>
         </Card>
 
-        {/* Contact Information */}
+        {/* Contact Info & Support */}
         <div className="space-y-8">
           <Card>
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
-              <CardDescription>
-                Choose the most convenient way to reach us
-              </CardDescription>
+              <CardDescription>Reach us via your preferred method</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-6">
-              {contactInfo.map((method, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    {method.icon}
-                  </div>
+              {contactInfo.map((method, idx) => (
+                <div key={idx} className="flex items-start space-x-4">
+                  <div className="bg-primary/10 p-3 rounded-lg">{method.icon}</div>
                   <div className="flex-1">
                     <h3 className="font-semibold">{method.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {method.description}
-                    </p>
+                    <p className="text-sm text-muted-foreground">{method.description}</p>
                     <p className="mt-1 font-medium">{method.details}</p>
                   </div>
                   <Button variant="outline" size="sm" asChild>
@@ -307,15 +253,12 @@ export default function ContactPage() {
           <Card>
             <CardHeader>
               <CardTitle>Support Hours</CardTitle>
-              <CardDescription>Our availability to assist you</CardDescription>
+              <CardDescription>When our team is available</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {supportHours.map((day, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between"
-                  >
+                {supportHours.map((day, idx) => (
+                  <div key={idx} className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <Clock className="h-5 w-5 text-muted-foreground" />
                       <span>{day.day}</span>
@@ -330,40 +273,35 @@ export default function ContactPage() {
           <Card className="bg-gradient-to-r from-primary/5 to-secondary/5">
             <CardHeader>
               <CardTitle>Join Our Community</CardTitle>
-              <CardDescription>
-                Connect with other developers and get support
-              </CardDescription>
+              <CardDescription>Connect with developers and enthusiasts</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <Button variant="outline" className="w-full">
-                  <MessageSquare className="h-4 w-4 mr-2" />
-                  Community Forum
-                </Button>
-                <Button variant="outline" className="w-full">
-                  <Users className="h-4 w-4 mr-2" />
-                  Developer Discord
-                </Button>
-              </div>
+            <CardContent className="space-y-4">
+              <Button variant="outline" className="w-full">
+                <MessageSquare className="h-4 w-4 mr-2" />
+                Community Forum
+              </Button>
+              <Button variant="outline" className="w-full">
+                <Users className="h-4 w-4 mr-2" />
+                Developer Discord
+              </Button>
             </CardContent>
           </Card>
         </div>
       </div>
 
       {/* Map Section */}
-      <Card className="mt-12 overflow-hidden">
+      <Card className="mt-12 py-0 overflow-hidden">
         <div className="h-64 md:h-96 w-full bg-muted flex items-center justify-center">
           <div className="text-center">
             <MapPin className="h-12 w-12 mx-auto text-primary mb-4" />
             <h3 className="text-xl font-semibold">Our Location</h3>
-            <p className="text-muted-foreground">
-              123 Tech Street, San Francisco, CA
-            </p>
-            <Button variant="link" className="mt-4">
-              View on Map <ChevronRight className="h-4 w-4 ml-2" />
+            <p className="text-muted-foreground">Cumilla, Bangladesh</p>
+            <Button variant="link" className="mt-4" asChild>
+              <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
+                View on Map <ChevronRight className="h-4 w-4 ml-2" />
+              </a>
             </Button>
           </div>
-          {/* In a real implementation, you would embed a Google Map here */}
         </div>
       </Card>
     </div>

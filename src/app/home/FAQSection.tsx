@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function FAQSection() {
   const faqs = [
@@ -262,10 +263,12 @@ export default function FAQSection() {
           <p className="text-muted-foreground mb-6">
             Still have questions? We`re here to help.
           </p>
-          <Button>
+          <Link href='/pages/company/contact'>
+                   <Button>
             Contact Support
             <ArrowRight className="h-4 w-4 ml-2" />
-          </Button>
+          </Button></Link>
+          
         </div>
       </div>
     </section>

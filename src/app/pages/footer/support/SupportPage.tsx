@@ -14,6 +14,7 @@ import {
   Settings,
   Globe,
 } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -36,70 +37,70 @@ export default function SupportPage() {
   const supportChannels = [
     {
       title: "Help Center",
-      description: "Browse articles, tutorials and FAQs",
+      description: "Browse articles, tutorials and FAQs.",
       icon: <HelpCircle className="h-6 w-6 text-blue-500" />,
       cta: "Visit Help Center",
-      link: "#",
+      link: "/pages/company/contact",
     },
     {
       title: "Community Forum",
-      description: "Get help from other developers",
+      description: "Get help from other developers.",
       icon: <Users className="h-6 w-6 text-purple-500" />,
       cta: "Join Community",
-      link: "#",
+      link: "https://www.facebook.com/codebiruni/",
     },
     {
       title: "Contact Support",
-      description: "Reach our support team directly",
+      description: "Reach our support team directly.",
       icon: <LifeBuoy className="h-6 w-6 text-amber-500" />,
       cta: "Open Ticket",
-      link: "#",
+      link: "/pages/company/contact",
     },
   ];
 
   const resources = [
     {
       title: "Documentation",
-      description: "Complete API references and guides",
+      description: "Complete API references and setup guides.",
       icon: <FileText className="h-5 w-5" />,
     },
     {
       title: "Tutorials",
-      description: "Step-by-step learning paths",
+      description: "Step-by-step learning paths for your projects.",
       icon: <BookOpen className="h-5 w-5" />,
     },
     {
       title: "Video Guides",
-      description: "Watch our video tutorials",
+      description: "Watch our development tutorials and workshops.",
       icon: <Video className="h-5 w-5" />,
     },
     {
       title: "Status Page",
-      description: "Check system status and uptime",
+      description: "Check our current system status and uptime.",
       icon: <Globe className="h-5 w-5" />,
     },
   ];
 
   const faqs = [
     {
-      question: "How do I reset my password?",
+      question: "How do I contact Code Biruni support?",
       answer:
-        "You can reset your password by clicking on 'Forgot Password' on the login page. We'll send a reset link to your registered email address.",
+        "You can reach us via email (codebiruny@gmail.com), WhatsApp, Telegram, or our contact page at /pages/company/contact.",
     },
     {
       question: "What are your support hours?",
       answer:
-        "Our standard support hours are Monday to Friday, 9AM to 6PM EST. Priority support is available 24/7 for enterprise customers.",
+        "We’re available from 9AM–6PM (GMT+6), Sunday through Friday. Emergency enterprise support is available 24/7.",
     },
     {
-      question: "How can I upgrade my plan?",
+      question: "Do you offer project-based assistance?",
       answer:
-        "You can upgrade your plan from the Billing section in your account settings. All upgrades are prorated based on your current subscription.",
+        "Yes! Our technical team can provide dedicated support for your ongoing web or software development projects.",
     },
     {
-      question: "Where can I find API documentation?",
+      question: "How can I follow Code Biruni updates?",
       answer:
-        "Our complete API documentation is available in the Developers section of our website. You can also access it directly from your dashboard.",
+        "Follow us on Facebook, LinkedIn, and Telegram for regular updates, product launches, and community activities.",
     },
   ];
 
@@ -141,9 +142,11 @@ export default function SupportPage() {
                 </div>
               </CardHeader>
               <CardFooter>
-                <Button variant="outline" className="w-full">
-                  {channel.cta} <ChevronRight className="h-4 w-4 ml-2" />
-                </Button>
+                <Link href={channel.link} className="w-full">
+                  <Button variant="outline" className="w-full">
+                    {channel.cta} <ChevronRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
               </CardFooter>
             </Card>
           ))}
@@ -176,9 +179,6 @@ export default function SupportPage() {
       <section className="mb-16">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-semibold">Frequently Asked Questions</h2>
-          <Button variant="ghost">
-            View all FAQs <ChevronRight className="h-4 w-4 ml-2" />
-          </Button>
         </div>
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
@@ -198,7 +198,7 @@ export default function SupportPage() {
           <CardHeader>
             <CardTitle className="text-2xl">Still need help?</CardTitle>
             <CardDescription>
-              Our team is ready to assist you with any questions or issues.
+              Our team is ready to assist you through multiple channels.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -207,9 +207,7 @@ export default function SupportPage() {
                 <Mail className="h-6 w-6 mt-1 text-primary" />
                 <div>
                   <h3 className="font-semibold">Email Support</h3>
-                  <p className="text-muted-foreground">
-                    support@codebiruny.com
-                  </p>
+                  <p className="text-muted-foreground">codebiruny@gmail.com</p>
                   <p className="text-sm mt-2">
                     Typically responds within 2 hours
                   </p>
@@ -218,28 +216,30 @@ export default function SupportPage() {
               <div className="flex items-start space-x-4">
                 <MessageSquare className="h-6 w-6 mt-1 text-primary" />
                 <div>
-                  <h3 className="font-semibold">Live Chat</h3>
+                  <h3 className="font-semibold">WhatsApp / Telegram</h3>
                   <p className="text-muted-foreground">
-                    Available in your dashboard
+                    +8801617688805 / +880176407140
                   </p>
-                  <p className="text-sm mt-2">Mon-Fri, 9AM-6PM EST</p>
+                  <p className="text-sm mt-2">Fastest response time</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <Phone className="h-6 w-6 mt-1 text-primary" />
                 <div>
                   <h3 className="font-semibold">Phone Support</h3>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                  <p className="text-sm mt-2">For enterprise customers only</p>
+                  <p className="text-muted-foreground">+8801617688805</p>
+                  <p className="text-sm mt-2">Available 9AM–6PM GMT+6</p>
                 </div>
               </div>
             </div>
           </CardContent>
           <CardFooter className="justify-center">
-            <Button size="lg">
-              <LifeBuoy className="h-4 w-4 mr-2" />
-              Contact Support Team
-            </Button>
+            <Link href="/pages/company/contact">
+              <Button size="lg">
+                <LifeBuoy className="h-4 w-4 mr-2" />
+                Contact Support Team
+              </Button>
+            </Link>
           </CardFooter>
         </Card>
       </section>
@@ -282,9 +282,11 @@ export default function SupportPage() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button variant="link" className="px-0">
-              View status history <ChevronRight className="h-4 w-4 ml-2" />
-            </Button>
+            <Link href="https://www.linkedin.com/company/code-biruni">
+              <Button variant="link" className="px-0">
+                Follow us on LinkedIn <ChevronRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
           </CardFooter>
         </Card>
       </section>

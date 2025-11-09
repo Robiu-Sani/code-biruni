@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function HomeProject() {
   const projects = [
@@ -164,14 +165,14 @@ export default function HomeProject() {
                     </div>
                   </CardContent>
                   <CardFooter className="p-6 pt-0">
-                    <Button
+                    {/* <Button
                       variant="outline"
                       size="sm"
                       className="w-full transition-all hover:bg-primary hover:text-primary-foreground"
                     >
                       View Details{" "}
                       <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
+                    </Button> */}
                   </CardFooter>
                 </Card>
               </div>
@@ -180,13 +181,14 @@ export default function HomeProject() {
         </div>
 
         <div className="text-center mt-12 animate-fade-in-up">
+          <Link href='/pages/company/contact'>
           <Button
             size="lg"
             className="transition-all hover:scale-105 hover:shadow-md"
           >
-            View All Projects
+            Contact With Us 
             <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
+          </Button></Link>
         </div>
       </div>
     </section>

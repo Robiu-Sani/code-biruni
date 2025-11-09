@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default function CareerBanner() {
   const jobOpenings = [
@@ -151,9 +152,11 @@ export default function CareerBanner() {
                 with a strong focus on asynchronous communication.
               </p>
             </div>
+            <Link  href='/pages/company/contact'>
             <Button variant="outline" className="shrink-0">
               Meet the team
             </Button>
+            </Link>
           </div>
         </div>
       </div>
