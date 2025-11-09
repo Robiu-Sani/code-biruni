@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 // import { ScrollArea } from "@/components/ui/scroll-area"
-import { Bot, User, X, Send, Minimize2, MessageCircle } from 'lucide-react'
+import { Bot, User, X, Send, Minimize2 } from 'lucide-react'
 import Chatbot from 'utils/chatbot'
 
 interface Message {
@@ -123,10 +123,10 @@ export default function ChatbotComponent() {
         <div className="fixed bottom-6 right-6 z-50 animate-in fade-in duration-300">
           <Button
             onClick={openChat}
-            className="rounded-full w-14 h-14 shadow-2xl bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 border-2 border-white/20 transition-all duration-200 hover:scale-105 active:scale-95"
+            className="rounded-full w-14 h-14 shadow-2xl bg-gradient-to-r from-primary to-gray-200 hover:from-primary/90 hover:to-gray-300 border-2 border-white/20 transition-all duration-200 hover:scale-105 active:scale-95"
             size="icon"
           >
-            <MessageCircle className="h-6 w-6" />
+            <Bot className="h-6 w-6" />
             <span className="sr-only">Open Chat</span>
           </Button>
         </div>

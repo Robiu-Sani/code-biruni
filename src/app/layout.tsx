@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     "Code Biruny",
     "technology consulting",
   ],
-  authors: [{ name: "Code Biruni", url: "https://code-biruny.vercel.app" }],
+  authors: [{ name: "Code Biruni", url: "https://www.codebiruni.com" }],
   creator: "Code Biruni",
   publisher: "Code Biruni",
-  metadataBase: new URL("https://code-biruny.vercel.app"),
+  metadataBase: new URL("https://www.codebiruni.com"),
   alternates: {
     canonical: "/",
     languages: {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Code Biruni - Building Digital Bridges Worldwide",
     description:
       "Custom software development and IT solutions tailored to your business needs.",
-    url: "https://code-biruny.vercel.app",
+    url: "https://www.codebiruni.com",
     siteName: "Code Biruni",
     images: [
       {
@@ -161,8 +161,8 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Code Biruni",
-            url: "https://code-biruny.vercel.app",
-            logo: "https://code-biruny.vercel.app/logo.png",
+            url: "https://www.codebiruni.com",
+            logo: "https://www.codebiruni.com/logo.png",
             description:
               "Custom software development and IT solutions provider",
             sameAs: [
