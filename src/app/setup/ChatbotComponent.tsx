@@ -104,6 +104,51 @@ export default function ChatbotComponent() {
     })
   }
 
+  const formatMessage = (content: string) => {
+    let formattedContent = content;
+
+    // Convert markdown links [text](url) to clickable links
+    formattedContent = formattedContent.replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" class="inline-link" style="color: #ea580c; text-decoration: underline; font-weight: 500;">$1</a>'
+    );
+
+    // Convert * bullet points to proper • points
+    formattedContent = formattedContent.replace(/^\*\s+/gm, '• ');
+
+    // Convert markdown-style formatting to HTML
+    formattedContent = formattedContent
+      .replace(/\*\*(.*?)\*\*/g, '<strong style="font-weight: 600;">$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em style="font-style: italic;">$1</em>')
+      .replace(/\n/g, '<br/>');
+
+    return (
+      <div 
+        className="message-content"
+        dangerouslySetInnerHTML={{ __html: formattedContent }}
+        onClick={(e) => {
+          // Handle link clicks within the message
+          const target = e.target as HTMLElement;
+          if (target.classList.contains('inline-link')) {
+            e.preventDefault();
+            const href = target.getAttribute('href');
+            if (href) {
+              setTimeout(() => {
+                // Use Next.js router or window.location for navigation
+                if (href.startsWith('http')) {
+                  window.open(href, '_blank');
+                } else {
+                  window.location.href = href;
+                }
+              }, 300);
+            }
+          }
+        }}
+        style={{ cursor: 'default' }}
+      />
+    );
+  };
+
   // Welcome message when first opening
   useEffect(() => {
     if (isOpen && messages.length === 0) {
@@ -212,7 +257,7 @@ export default function ChatbotComponent() {
           }`}
         >
           <p className="text-sm whitespace-pre-wrap leading-relaxed">
-            {message.content}
+            {formatMessage(message.content)}
           </p>
           <p
             className={`text-xs mt-2 ${
