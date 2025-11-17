@@ -265,7 +265,7 @@ export default function ChatbotComponent() {
     <>
       {/* Floating Chat Button */}
       {showChatButton && (
-        <div className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-50 animate-in fade-in duration-300">
+        <div className="fixed bottom-6 right-6 z-50 animate-in fade-in duration-300">
           <Button
             onClick={openChat}
             className="rounded-full w-16 h-16 shadow-2xl bg-gradient-to-br from-gray-600 to-gray-800 hover:from-gray-700 hover:to-gray-900 transition-all duration-200 hover:scale-105 active:scale-95 border-2 border-white/20"
@@ -279,7 +279,7 @@ export default function ChatbotComponent() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-full sm:w-[calc(100vw-3rem)] sm:max-w-sm sm:h-[500px] h-full animate-in fade-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed bottom-0 sm:bottom-6 sm:right-6 right-0 z-50 w-full sm:w-[calc(100vw-3rem)] sm:max-w-sm sm:h-[500px] h-full animate-in fade-in slide-in-from-bottom-5 duration-300">
           <Card className="w-full h-full py-0 flex flex-col shadow-2xl border-2 rounded-none sm:rounded-xl border-primary/20 bg-background/95 backdrop-blur-sm overflow-hidden">
             {/* Header */}
             <CardHeader className="h-[60px] py-3 px-4 bg-gradient-to-r from-primary/10 to-purple-600/10 border-b flex-shrink-0">
