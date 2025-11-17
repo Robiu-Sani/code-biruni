@@ -63,9 +63,11 @@ const COMPANY_INFO = {
     phones: ["+8801617688805", "+880176407140"],
     location: "Dhaka, Bangladesh",
     linkedin: "https://www.linkedin.com/company/107740161/",
+    facebookPage: "https://www.facebook.com/codebiruni/",
+    facebookGroup: "https://www.facebook.com/groups/719726990943126/",
     hours: {
       weekdays: "Saturday - Thursday: 9:00 AM – 6:00 PM",
-      friday: "Friday: Closed"
+      friday: "Friday: Closed But Contact method open for Black Friday Offer"
     }
   },
 
@@ -103,7 +105,7 @@ const COMPANY_INFO = {
     "50+ Successful Projects",
     "95% Client Satisfaction Rate",
     "30+ Happy Customers",
-    "5+ Years Industry Experience",
+    "1+ Years Industry Experience",
     "Award-Winning Designs"
   ]
 };
@@ -141,6 +143,8 @@ Which service interests you the most?`,
 📱 Phone: ${COMPANY_INFO.contact.phones.join(' / ')}
 📍 Location: ${COMPANY_INFO.contact.location}
 💼 LinkedIn: ${COMPANY_INFO.contact.linkedin}
+💼 Facebook Page: ${COMPANY_INFO.contact.facebookPage}
+💼 Facebook Group: ${COMPANY_INFO.contact.facebookGroup}
 
 **Business Hours:**
 ${COMPANY_INFO.contact.hours.weekdays}
