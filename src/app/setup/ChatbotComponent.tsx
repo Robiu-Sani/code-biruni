@@ -265,7 +265,7 @@ export default function ChatbotComponent() {
     <>
       {/* Floating Chat Button */}
       {showChatButton && (
-        <div className="fixed bottom-6 right-6 z-50 animate-in fade-in duration-300">
+        <div className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-50 animate-in fade-in duration-300">
           <Button
             onClick={openChat}
             className="rounded-full w-16 h-16 shadow-2xl bg-gradient-to-br from-gray-600 to-gray-800 hover:from-gray-700 hover:to-gray-900 transition-all duration-200 hover:scale-105 active:scale-95 border-2 border-white/20"
