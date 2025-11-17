@@ -64,7 +64,6 @@ const COMPANY_INFO = {
     location: "Dhaka, Bangladesh",
     linkedin: "https://www.linkedin.com/company/107740161/",
     facebookPage: "https://www.facebook.com/codebiruni/",
-    facebookGroup: "https://www.facebook.com/groups/719726990943126/",
     hours: {
       weekdays: "Saturday - Thursday: 9:00 AM – 6:00 PM",
       friday: "Friday: Closed But Contact method open for Black Friday Offer"
@@ -144,7 +143,6 @@ Which service interests you the most?`,
 📍 Location: ${COMPANY_INFO.contact.location}
 💼 LinkedIn: ${COMPANY_INFO.contact.linkedin}
 💼 Facebook Page: ${COMPANY_INFO.contact.facebookPage}
-💼 Facebook Group: ${COMPANY_INFO.contact.facebookGroup}
 
 **Business Hours:**
 ${COMPANY_INFO.contact.hours.weekdays}
