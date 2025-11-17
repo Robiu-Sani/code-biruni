@@ -105,49 +105,129 @@ export default function ChatbotComponent() {
   }
 
   const formatMessage = (content: string) => {
-    let formattedContent = content;
+  let formattedContent = content;
 
-    // Convert markdown links [text](url) to clickable links
-    formattedContent = formattedContent.replace(
-      /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" class="inline-link" style="color: #ea580c; text-decoration: underline; font-weight: 500;">$1</a>'
-    );
+  // Convert markdown links [text](url) to clickable links
+  formattedContent = formattedContent.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" class="inline-link" style="color: #ea580c; text-decoration: underline; font-weight: 500;">$1</a>'
+  );
 
-    // Convert * bullet points to proper • points
-    formattedContent = formattedContent.replace(/^\*\s+/gm, '• ');
+  // Convert * bullet points to proper • points
+  formattedContent = formattedContent.replace(/^\*\s+/gm, '• ');
 
-    // Convert markdown-style formatting to HTML
-    formattedContent = formattedContent
-      .replace(/\*\*(.*?)\*\*/g, '<strong style="font-weight: 600;">$1</strong>')
-      .replace(/\*(.*?)\*/g, '<em style="font-style: italic;">$1</em>')
-      .replace(/\n/g, '<br/>');
+  // Convert markdown-style formatting to HTML
+  formattedContent = formattedContent
+    .replace(/\*\*(.*?)\*\*/g, '<strong style="font-weight: 600;">$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em style="font-style: italic;">$1</em>');
 
-    return (
-      <div 
-        className="message-content"
-        dangerouslySetInnerHTML={{ __html: formattedContent }}
-        onClick={(e) => {
-          // Handle link clicks within the message
-          const target = e.target as HTMLElement;
-          if (target.classList.contains('inline-link')) {
-            e.preventDefault();
-            const href = target.getAttribute('href');
-            if (href) {
-              setTimeout(() => {
-                // Use Next.js router or window.location for navigation
+  // Function to extract domain from URL
+  const getDomainFromUrl = (url: string): string => {
+    try {
+      const domain = url.replace(/^https?:\/\//, '').split('/')[0];
+      return domain.startsWith('www.') ? domain.substring(4) : domain;
+    } catch {
+      return url;
+    }
+  };
+
+  // Function to format phone numbers
+  const formatPhoneNumber = (phone: string): string => {
+    // Remove all non-digit characters except +
+    const cleaned = phone.replace(/[^\d+]/g, '');
+    
+    // Format based on length and pattern
+    if (cleaned.startsWith('+')) {
+      return cleaned; // Keep international format as is
+    } else if (cleaned.length === 10) {
+      return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
+    } else {
+      return cleaned;
+    }
+  };
+
+  // Detect and convert URLs
+  formattedContent = formattedContent.replace(
+    /(https?:\/\/[^\s]+)/g,
+    (url) => {
+      const domain = getDomainFromUrl(url);
+      return `<a href="${url}" class="inline-link url-link" style="color: #ea580c; text-decoration: underline; font-weight: 500;">${domain}</a>`;
+    }
+  );
+
+  // Detect and convert email addresses
+  formattedContent = formattedContent.replace(
+    /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi,
+    (email) => {
+      return `<a href="mailto:${email}" class="inline-link email-link" style="color: #ea580c; text-decoration: underline; font-weight: 500;">${email}</a>`;
+    }
+  );
+
+  // Detect and convert phone numbers
+  formattedContent = formattedContent.replace(
+    /(\+?[\d\s\-\(\)]{10,})/g,
+    (phone) => {
+      // Basic validation for phone numbers (at least 10 digits)
+      const digitCount = phone.replace(/[^\d]/g, '').length;
+      if (digitCount >= 10) {
+        const formattedPhone = formatPhoneNumber(phone);
+        return `<a href="tel:${phone.replace(/[^\d+]/g, '')}" class="inline-link phone-link" style="color: #ea580c; text-decoration: underline; font-weight: 500;">${formattedPhone}</a>`;
+      }
+      return phone; // Return original if it doesn't meet phone number criteria
+    }
+  );
+
+  // Convert newlines to br tags (do this last to avoid breaking other regex)
+  formattedContent = formattedContent.replace(/\n/g, '<br/>');
+
+  return (
+    <div 
+      className="message-content"
+      dangerouslySetInnerHTML={{ __html: formattedContent }}
+      onClick={(e) => {
+        // Handle link clicks within the message
+        const target = e.target as HTMLElement;
+        if (target.classList.contains('inline-link')) {
+          e.preventDefault();
+          const href = target.getAttribute('href');
+          
+          if (href) {
+            setTimeout(() => {
+              // Handle different types of links
+              if (target.classList.contains('url-link')) {
+                // URL links - open in new tab
+                window.open(href, '_blank', 'noopener noreferrer');
+              } else if (target.classList.contains('email-link')) {
+                // Email links - open default email client
+                window.location.href = href;
+              } else if (target.classList.contains('phone-link')) {
+                // Phone links - initiate call or open dialer
+                if (/^tel:\+?[\d]+$/.test(href)) {
+                  window.location.href = href;
+                } else {
+                  // Fallback for unsupported tel links
+                  console.log('Phone number:', href.replace('tel:', ''));
+                }
+              } else {
+                // Regular markdown links
                 if (href.startsWith('http')) {
-                  window.open(href, '_blank');
+                  window.open(href, '_blank', 'noopener noreferrer');
                 } else {
                   window.location.href = href;
                 }
-              }, 300);
-            }
+              }
+            }, 300);
           }
-        }}
-        style={{ cursor: 'default' }}
-      />
-    );
-  };
+        }
+      }}
+      style={{ 
+        cursor: 'default',
+        wordWrap: 'break-word',
+        overflowWrap: 'break-word'
+      }}
+    />
+  );
+};
 
   // Welcome message when first opening
   useEffect(() => {
@@ -179,8 +259,8 @@ export default function ChatbotComponent() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[calc(100vw-3rem)] max-w-sm h-[500px] animate-in fade-in slide-in-from-bottom-5 duration-300">
-          <Card className="w-full h-full py-0 flex flex-col shadow-2xl border-2 border-primary/20 bg-background/95 backdrop-blur-sm overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-50 w-full sm:w-[calc(100vw-3rem)]  sm:max-w-sm sm:h-[500px] h-full animate-in fade-in slide-in-from-bottom-5 duration-300">
+          <Card className="w-full h-full py-0 flex flex-col shadow-2xl border-2 rounded-none sm:rounded-xl border-primary/20 bg-background/95 backdrop-blur-sm overflow-hidden">
             {/* Header - Fixed height ~60px */}
             <CardHeader className="h-[60px] py-3 px-4 bg-gradient-to-r from-primary/10 to-purple-600/10 border-b flex-shrink-0">
   <div className="flex justify-between items-center w-full">
@@ -249,26 +329,66 @@ export default function ChatbotComponent() {
         </div>
 
         {/* Message Bubble */}
-        <div
-          className={`max-w-[80%] rounded-2xl px-4 py-3 ${
-            message.role === 'user'
-              ? 'bg-primary text-primary-foreground rounded-br-none'
-              : 'bg-muted text-foreground rounded-bl-none border'
-          }`}
-        >
-          <p className="text-sm whitespace-pre-wrap leading-relaxed">
-            {formatMessage(message.content)}
-          </p>
-          <p
-            className={`text-xs mt-2 ${
-              message.role === 'user'
-                ? 'text-primary-foreground/70'
-                : 'text-muted-foreground'
-            }`}
-          >
-            {formatTime(message.timestamp)}
-          </p>
-        </div>
+      <div
+  className={`relative max-w-[80%] rounded-2xl px-4 py-3 ${
+    message.role === 'user'
+      ? 'bg-primary text-primary-foreground rounded-br-none'
+      : 'bg-muted text-foreground rounded-bl-none border'
+  }`}
+>
+  <div className="flex items-start justify-between gap-2">
+    <div className="flex-1">
+      <div className="text-sm whitespace-pre-wrap leading-relaxed">
+        {formatMessage(message.content)}
+      </div>
+    </div>
+    
+    {/* Copy icon button */}
+    <button
+      onClick={() => {
+        navigator.clipboard.writeText(message.content);
+        // You can add toast notification here if needed
+      }}
+      className={`flex-shrink-0 mt-1 p-1 rounded-full transition-colors ${
+        message.role === 'user'
+          ? 'text-primary-foreground/70 hover:bg-primary-foreground/20'
+          : 'text-muted-foreground hover:bg-muted-foreground/20'
+      }`}
+      title="Copy message"
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+{/* Time positioned after the message box */}
+<div
+  className={`flex items-center gap-2 mt-1 ${
+    message.role === 'user' ? 'justify-end' : 'justify-start'
+  }`}
+>
+  <p
+    className={`text-xs ${
+      message.role === 'user'
+        ? 'text-muted-foreground'
+        : 'text-muted-foreground'
+    }`}
+  >
+    {formatTime(message.timestamp)}
+  </p>
+</div>
       </div>
     ))}
     
