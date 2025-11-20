@@ -123,6 +123,8 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
+        <meta name="google-site-verification" content="Z8oAFw8y6ky4yW-iPN7L-BX_pBYFksEbvWLx7gYYLg8" />
+
         {/* Favicon links */}
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
