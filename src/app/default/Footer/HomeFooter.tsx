@@ -1,11 +1,18 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, MessageSquare, Users } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function HomeFooter() {
   const currentYear = new Date().getFullYear();
+  const pathName =  usePathname()
+
+  if (pathName.startsWith('/dashboard')) {
+  return null;
+}
 
   const footerSections = {
     product: [

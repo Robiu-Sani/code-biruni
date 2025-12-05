@@ -1,5 +1,12 @@
-import React from "react";
 
-export default function page() {
-  return <div>page</div>;
+
+import data from "./data.json"
+import { DataTable } from "components/ui/data-table"
+
+export default function Page() {
+  return (
+    <div className="w-full">
+      <DataTable data={data} />
+    </div>
+  )
 }

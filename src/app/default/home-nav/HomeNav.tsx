@@ -28,6 +28,7 @@ import { VscAzure, VscServerEnvironment, VscCode } from "react-icons/vsc";
 import { FiUsers, FiMail } from "react-icons/fi";
 import Image from "next/image";
 import SearchBox from "../SearchBox";
+import { usePathname } from "next/navigation";
 
 export default function HomeNav() {
   const { theme, setTheme } = useTheme();
@@ -35,9 +36,15 @@ export default function HomeNav() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // const router = useRouter()
+  const pathName = usePathname()
+
+  
+
 
   // Ensure theme is only applied after mounting to avoid hydration mismatch
   useEffect(() => {
+    
     setMounted(true);
     
     // Handle scroll effect
@@ -48,6 +55,10 @@ export default function HomeNav() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (pathName.startsWith('/dashboard')) {
+  return null;
+}
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
