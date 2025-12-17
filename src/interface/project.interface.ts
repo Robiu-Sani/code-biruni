@@ -4,6 +4,8 @@ export interface IProject{
     domains:string[];
     defaultDomains?:string[];
     githubLinks:string[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    hostService?:any;
     contacts:{
         name:string;
         method:string;

@@ -28,6 +28,7 @@ const PricingSchema: Schema<IPricing> = new Schema(
     amount: {
       prev: { type: Number, required: true },
       current: { type: Number, required: true },
+      yearly: { type: Number, required: true },
     },
 
     amountType: {

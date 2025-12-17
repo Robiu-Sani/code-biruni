@@ -3,20 +3,17 @@
 import * as React from "react"
 import {
   IconCamera,
-  IconChartBar,
   IconDashboard,
   IconDatabase,
   IconFileAi,
   IconFileDescription,
   IconFileWord,
-  IconFolder,
   IconHelp,
   IconInnerShadowTop,
   IconListDetails,
   IconReport,
   IconSearch,
   IconSettings,
-  IconUsers,
 } from "@tabler/icons-react"
 
 import {
@@ -32,6 +29,7 @@ import { NavMain } from "./nav-main"
 import { NavDocuments } from "./nav-documents"
 import { NavSecondary } from "./nav-secondary"
 import { NavUser } from "./nav-user"
+import { Cable, FolderGit2, HandCoins,  PcCase,  ScanEye, Telescope, Transgender, UserPlus } from "lucide-react"
 
 const data = {
   user: {
@@ -42,28 +40,53 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard/admin/",
       icon: IconDashboard,
     },
     {
-      title: "Lifecycle",
-      url: "#",
+      title: "Add Project",
+      url: "/dashboard/admin/add-project",
+      icon: FolderGit2 ,
+    },
+    {
+      title: "Add Templates",
+      url: "/dashboard/admin/add-template",
       icon: IconListDetails,
     },
     {
-      title: "Analytics",
-      url: "#",
-      icon: IconChartBar,
+      title: "Add Target Client",
+      url: "/dashboard/admin/add-target-client",
+      icon: Telescope ,
     },
     {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
+      title: "Add Review",
+      url: "/dashboard/admin/add-review",
+      icon: ScanEye ,
     },
     {
-      title: "Team",
-      url: "#",
-      icon: IconUsers,
+      title: "Add Pricing",
+      url: "/dashboard/admin/add-pricing",
+      icon: HandCoins,
+    },
+    {
+      title: "Add Member",
+      url: "/dashboard/admin/add-member",
+      icon: UserPlus,
+    },
+    {
+      title: "Add FAQ",
+      url: "/dashboard/admin/add-faq",
+      icon: Transgender,
+    },
+    {
+      title: "Add Case Studies",
+      url: "/dashboard/admin/add-case-studies",
+      icon: PcCase,
+    },
+    {
+      title: "Add Contact Info",
+      url: "/dashboard/admin/add-contact-info",
+      icon: Cable,
     },
   ],
   navClouds: [

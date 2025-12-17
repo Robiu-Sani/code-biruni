@@ -4,6 +4,7 @@ export interface IPricing{
     amount:{
         prev:number;
         current:number;
+        yearly:number;
     }
     amountType:'yearly' | 'monthly';
     services:{
