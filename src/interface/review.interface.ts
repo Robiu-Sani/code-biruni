@@ -1,4 +1,4 @@
-import { ObjectId } from "mongoose";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 export interface IReview{
     projectName:string;
@@ -7,5 +7,5 @@ export interface IReview{
     description:string;
     domain:string;
     image:string;
-    project?:ObjectId;
+    project?:any;
 }

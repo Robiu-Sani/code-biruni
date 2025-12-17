@@ -4,14 +4,11 @@ import * as React from "react"
 import {
   IconCamera,
   IconDashboard,
-  IconDatabase,
   IconFileAi,
   IconFileDescription,
-  IconFileWord,
   IconHelp,
   IconInnerShadowTop,
   IconListDetails,
-  IconReport,
   IconSearch,
   IconSettings,
 } from "@tabler/icons-react"
@@ -42,52 +39,7 @@ const data = {
       title: "Dashboard",
       url: "/dashboard/admin/",
       icon: IconDashboard,
-    },
-    {
-      title: "Add Project",
-      url: "/dashboard/admin/add-project",
-      icon: FolderGit2 ,
-    },
-    {
-      title: "Add Templates",
-      url: "/dashboard/admin/add-template",
-      icon: IconListDetails,
-    },
-    {
-      title: "Add Target Client",
-      url: "/dashboard/admin/add-target-client",
-      icon: Telescope ,
-    },
-    {
-      title: "Add Review",
-      url: "/dashboard/admin/add-review",
-      icon: ScanEye ,
-    },
-    {
-      title: "Add Pricing",
-      url: "/dashboard/admin/add-pricing",
-      icon: HandCoins,
-    },
-    {
-      title: "Add Member",
-      url: "/dashboard/admin/add-member",
-      icon: UserPlus,
-    },
-    {
-      title: "Add FAQ",
-      url: "/dashboard/admin/add-faq",
-      icon: Transgender,
-    },
-    {
-      title: "Add Case Studies",
-      url: "/dashboard/admin/add-case-studies",
-      icon: PcCase,
-    },
-    {
-      title: "Add Contact Info",
-      url: "/dashboard/admin/add-contact-info",
-      icon: Cable,
-    },
+    }
   ],
   navClouds: [
     {
@@ -156,19 +108,49 @@ const data = {
   ],
   documents: [
     {
-      name: "Data Library",
-      url: "#",
-      icon: IconDatabase,
+      title: "Add Project",
+      url: "/dashboard/admin/add-project",
+      icon: FolderGit2 ,
     },
     {
-      name: "Reports",
-      url: "#",
-      icon: IconReport,
+      title: "Add Templates",
+      url: "/dashboard/admin/add-template",
+      icon: IconListDetails,
     },
     {
-      name: "Word Assistant",
-      url: "#",
-      icon: IconFileWord,
+      title: "Add Target Client",
+      url: "/dashboard/admin/add-target-client",
+      icon: Telescope ,
+    },
+    {
+      title: "Add Review",
+      url: "/dashboard/admin/add-review",
+      icon: ScanEye ,
+    },
+    {
+      title: "Add Pricing",
+      url: "/dashboard/admin/add-pricing",
+      icon: HandCoins,
+    },
+    {
+      title: "Add Member",
+      url: "/dashboard/admin/add-member",
+      icon: UserPlus,
+    },
+    {
+      title: "Add FAQ",
+      url: "/dashboard/admin/add-faq",
+      icon: Transgender,
+    },
+    {
+      title: "Add Case Studies",
+      url: "/dashboard/admin/add-case-studies",
+      icon: PcCase,
+    },
+    {
+      title: "Add Contact Info",
+      url: "/dashboard/admin/add-contact-info",
+      icon: Cable,
     },
   ],
 }

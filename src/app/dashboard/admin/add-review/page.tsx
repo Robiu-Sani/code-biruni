@@ -1,7 +1,10 @@
 import React from 'react'
+import AddReview from './AddReview'
 
 export default function page() {
   return (
-    <div>page</div>
+    <div>
+      <AddReview />
+    </div>
   )
 }

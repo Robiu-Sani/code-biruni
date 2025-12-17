@@ -1,10 +1,10 @@
 import React from 'react'
-import AddCaseStudies from './AddCaseStudies'
+import AddFaqForm from './AddFaqForm'
 
 export default function page() {
   return (
     <div>
-      <AddCaseStudies />
+        <AddFaqForm />
     </div>
   )
 }

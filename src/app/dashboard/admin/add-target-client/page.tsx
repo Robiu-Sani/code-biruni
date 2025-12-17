@@ -1,7 +1,10 @@
 import React from 'react'
+import AddTargetClientForm from './AddTargetClientForm'
 
 export default function page() {
   return (
-    <div>page</div>
+    <div>
+      <AddTargetClientForm />
+    </div>
   )
 }

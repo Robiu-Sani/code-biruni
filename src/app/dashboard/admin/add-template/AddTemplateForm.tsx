@@ -137,7 +137,7 @@ const AddTemplateForm: React.FC = () => {
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto">
+    <Card className="w-full max-w-4xl my-7 mx-auto">
       <CardHeader>
         <CardTitle>Add New Template</CardTitle>
         <CardDescription>Create a new template for your services</CardDescription>

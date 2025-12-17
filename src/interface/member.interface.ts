@@ -6,7 +6,7 @@ export interface IMember {
   firstName?: string;
   lastName?: string;
   nickName?: string;
-  gender?: "male" | "female" | "other";
+  gender?: "male" | "female" | "other" | "";
   birthDate?: string;
   profileImage?: string;
   coverPhoto?: string;
