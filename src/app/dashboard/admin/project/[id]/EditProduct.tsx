@@ -274,14 +274,14 @@ export default function EditProduct() {
       };
 
       // Use PUT for update
-      const response = await axios.put(`/api/v2/project/action/${id}`, projectData);
+      const response = await axios.patch(`/api/v2/project/action/${id}`, projectData);
       
       if (response.data.success) {
         toast.success('Project updated successfully');
         
         // Redirect back to projects list after a short delay
         setTimeout(() => {
-          router.push('/dashboard/admin/projects');
+          router.push('/dashboard/admin/project');
         }, 1500);
       } else {
         throw new Error(response.data.message || 'Failed to update project');
