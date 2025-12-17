@@ -72,7 +72,6 @@ export async function PUT(req: Request) {
     const bulkUpdateResult = await User.updateMany(
       { _id: { $in: ids } },
       updates,
-      { new: true }
     );
 
     // Fetch the updated users to return them
@@ -109,7 +108,6 @@ export async function PATCH(req: Request) {
     const bulkUpdateResult = await User.updateMany(
       { _id: { $in: ids } },
       { $set: updates },
-      { new: true }
     );
 
     // Fetch the updated users to return them

@@ -1,7 +1,10 @@
 import React from 'react'
+import AddTemplateForm from './AddTemplateForm'
 
 export default function page() {
   return (
-    <div>page</div>
+    <div>
+      <AddTemplateForm />
+    </div>
   )
 }
