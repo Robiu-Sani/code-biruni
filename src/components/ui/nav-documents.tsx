@@ -28,7 +28,7 @@ export function NavDocuments({ items }: any) {
                 asChild 
                 isActive={isActive}
                 className={cn(
-                  isActive && "bg-zinc-950 text-white font-medium"
+                  isActive && "!bg-zinc-950 dark:!bg-gray-100 dark:!text-zinc-950 !text-white font-medium"
                 )}
               >
                 <Link href={item.url} className="flex items-center gap-2">
