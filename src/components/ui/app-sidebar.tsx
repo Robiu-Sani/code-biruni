@@ -3,7 +3,6 @@
 import * as React from "react"
 import {
   IconCamera,
-  IconDashboard,
   IconFileAi,
   IconFileDescription,
   IconHelp,
@@ -26,7 +25,7 @@ import { NavMain } from "./nav-main"
 import { NavDocuments } from "./nav-documents"
 import { NavSecondary } from "./nav-secondary"
 import { NavUser } from "./nav-user"
-import { Cable, FolderGit2, HandCoins,  PcCase,  ScanEye, Telescope, Transgender, UserPlus } from "lucide-react"
+import { Briefcase, Cable, DollarSign, FolderGit2, FolderKanban, HandCoins,  HelpCircle,  LayoutDashboard,  LayoutTemplate,  PcCase,  Phone,  ScanEye, ShoppingCart, Star, Target, Telescope, Transgender, UserPlus, Users } from "lucide-react"
 
 const data = {
   user: {
@@ -35,12 +34,63 @@ const data = {
     avatar: "/avatars/shadcn.jpg",
   },
   navMain: [
-    {
-      title: "Dashboard",
-      url: "/dashboard/admin/",
-      icon: IconDashboard,
-    }
-  ],
+  {
+    title: "Dashboard",
+    url: "/dashboard/admin/",
+    icon: LayoutDashboard,
+  },
+  {
+    title: "Orders",
+    url: "/dashboard/admin/order",
+    icon: ShoppingCart,
+  },
+  {
+    title: "Projects",
+    url: "/dashboard/admin/project",
+    icon: FolderKanban,
+  },
+  {
+    title: "Templates",
+    url: "/dashboard/admin/template",
+    icon: LayoutTemplate,
+  },
+  {
+    title: "Pricing",
+    url: "/dashboard/admin/pricing",
+    icon: DollarSign,
+  },
+  {
+    title: "Targeted Clients",
+    url: "/dashboard/admin/target-client",
+    icon: Target,
+  },
+  {
+    title: "Members",
+    url: "/dashboard/admin/member",
+    icon: Users,
+  },
+  {
+    title: "Reviews",
+    url: "/dashboard/admin/review",
+    icon: Star,
+  },
+  {
+    title: "FAQ",
+    url: "/dashboard/admin/faq",
+    icon: HelpCircle,
+  },
+  {
+    title: "Contact Info",
+    url: "/dashboard/admin/contact-info",
+    icon: Phone,
+  },
+  {
+    title: "Case Studies",
+    url: "/dashboard/admin/case-studies",
+    icon: Briefcase,
+  },
+],
+
   navClouds: [
     {
       title: "Capture",

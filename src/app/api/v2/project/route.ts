@@ -1,39 +1,75 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import connectDb from "lib/connectdb";
 import ProjectModel from "model/project.model";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 /**
  * GET → Get all projects + search & filter
  * Supports queries like:
  * /api/projects?search=website&isDeleted=false
  */
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
   try {
     await connectDb();
-    const { search, isDeleted } = Object.fromEntries(
-      new URL(req.url).searchParams.entries()
-    );
 
-    const query: any = {};
+    const params = Object.fromEntries(req.nextUrl.searchParams.entries());
 
-    // Search by name, mainDomain, description
+    const {
+      search,
+      isDeleted,
+      page = "1",
+      limit = "10",
+    } = params;
+
+    const pageNumber = Math.max(parseInt(page, 10), 1);
+    const limitNumber = Math.max(parseInt(limit, 10), 1);
+    const skip = (pageNumber - 1) * limitNumber;
+
+    const query: Record<string, any> = {};
+
+    // 🔒 Escape regex
+    const escapeRegex = (text: string) =>
+      text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+    // 🔍 Search
     if (search) {
+      const safeSearch = escapeRegex(search);
       query.$or = [
-        { name: { $regex: search, $options: "i" } },
-        { mainDomain: { $regex: search, $options: "i" } },
-        { description: { $regex: search, $options: "i" } },
+        { name: { $regex: safeSearch, $options: "i" } },
+        { mainDomain: { $regex: safeSearch, $options: "i" } },
+        { description: { $regex: safeSearch, $options: "i" } },
       ];
     }
 
-    if (isDeleted !== undefined) {
-      query.isDeleted = isDeleted === "true";
-    }
+    // 🗑️ Deleted filter (default false)
+    query.isDeleted = isDeleted === "true";
 
-    const results = await ProjectModel.find(query).sort({ createdAt: -1 });
-    return NextResponse.json({ success: true, data: results });
+    // 📊 Queries
+    const [data, total] = await Promise.all([
+      ProjectModel.find(query)
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(limitNumber),
+      ProjectModel.countDocuments(query),
+    ]);
+
+    return NextResponse.json({
+      success: true,
+      data,
+      pagination: {
+        total,
+        page: pageNumber,
+        limit: limitNumber,
+        totalPages: Math.ceil(total / limitNumber),
+        hasNextPage: pageNumber * limitNumber < total,
+        hasPrevPage: pageNumber > 1,
+      },
+    });
   } catch (error: any) {
-    return NextResponse.json({ success: false, message: error.message }, { status: 500 });
+    return NextResponse.json(
+      { success: false, message: error.message },
+      { status: 500 }
+    );
   }
 }
 
