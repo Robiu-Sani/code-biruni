@@ -304,7 +304,7 @@ export default function EditProduct() {
             <CardTitle>Loading Project...</CardTitle>
             <CardDescription>Please wait while we fetch project data</CardDescription>
           </CardHeader>
-          <CardContent className="flex justify-center items-center min-h-[400px]">
+          <CardContent className="flex justify-center items-center min-h-100">
             <Loader2 className="h-8 w-8 animate-spin" />
           </CardContent>
         </Card>
@@ -921,7 +921,7 @@ export default function EditProduct() {
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="min-w-[150px]"
+                className="min-w-37.5"
               >
                 {isSubmitting ? (
                   <>

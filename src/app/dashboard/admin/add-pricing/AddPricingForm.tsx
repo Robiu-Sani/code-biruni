@@ -12,7 +12,7 @@ import { Trash2, Plus } from "lucide-react";
 
 interface ServiceItem {
   name: string;
-  isProvided: boolean;
+  isProvied: boolean;
 }
 
 export interface IPricing {
@@ -27,7 +27,7 @@ export interface IPricing {
   amountType: 'monthly' | 'yearly';
   services: {
     name: string;
-    isProvided: boolean;
+    isProvied: boolean;
   }[];
   baseText: string;
   createdAt: string;
@@ -51,7 +51,7 @@ const AddPricingForm: React.FC = () => {
 
   const [newService, setNewService] = useState<ServiceItem>({
     name: '',
-    isProvided: false
+    isProvied: false
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -97,7 +97,7 @@ const AddPricingForm: React.FC = () => {
     
     setNewService({
       name: '',
-      isProvided: false
+      isProvied: false
     });
   };
 
@@ -259,14 +259,14 @@ const AddPricingForm: React.FC = () => {
               />
               <div className="flex items-center space-x-2">
                 <Checkbox
-                  id="isProvided"
-                  name="isProvided"
-                  checked={newService.isProvided}
+                  id="isProvied"
+                  name="isProvied"
+                  checked={newService.isProvied}
                   onCheckedChange={(checked) => 
-                    setNewService(prev => ({ ...prev, isProvided: !!checked }))
+                    setNewService(prev => ({ ...prev, isProvied: !!checked }))
                   }
                 />
-                <Label htmlFor="isProvided" className="text-sm">Provided</Label>
+                <Label htmlFor="isProvied" className="text-sm">Provided</Label>
               </div>
               <Button 
                 type="button" 
@@ -285,8 +285,8 @@ const AddPricingForm: React.FC = () => {
                   <div key={index} className="flex justify-between items-center p-3">
                     <div className="flex items-center gap-2">
                       <span>{service.name}</span>
-                      <Badge variant={service.isProvided ? "default" : "secondary"}>
-                        {service.isProvided ? 'Provided' : 'Not Provided'}
+                      <Badge variant={service.isProvied ? "default" : "secondary"}>
+                        {service.isProvied ? 'Provided' : 'Not Provided'}
                       </Badge>
                     </div>
                     <Button
