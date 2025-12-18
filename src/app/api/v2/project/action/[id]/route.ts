@@ -1,8 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import mongoose from "mongoose";
 import connectDb from "lib/connectdb";
 import ProjectModel from "model/project.model";
+
+// ✅ Params type (IMPORTANT for Next.js 15.5+)
+type ParamsType = {
+  params: Promise<{
+    id: string;
+  }>;
+};
 
 // ✅ Helper: validate MongoDB ObjectId
 const isValidObjectId = (id: string) =>
@@ -13,14 +20,11 @@ const isValidObjectId = (id: string) =>
  * GET: Get single project by ID
  * ---------------------------------------
  */
-export async function GET(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+export async function GET(req: NextRequest, context: ParamsType) {
+  const { id } = await context.params;
+
   try {
     await connectDb();
-
-    const { id } = params;
 
     if (!isValidObjectId(id)) {
       return NextResponse.json(
@@ -41,10 +45,16 @@ export async function GET(
       );
     }
 
-    return NextResponse.json({ success: true, data: project });
+    return NextResponse.json({
+      success: true,
+      data: project,
+    });
   } catch (error: any) {
     return NextResponse.json(
-      { success: false, message: error.message },
+      {
+        success: false,
+        message: error.message || "Failed to fetch project",
+      },
       { status: 500 }
     );
   }
@@ -55,15 +65,11 @@ export async function GET(
  * PATCH: Update single project by ID
  * ---------------------------------------
  */
-export async function PATCH(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+export async function PATCH(req: NextRequest, context: ParamsType) {
+  const { id } = await context.params;
+
   try {
     await connectDb();
-
-    const { id } = params;
-    const body = await req.json();
 
     if (!isValidObjectId(id)) {
       return NextResponse.json(
@@ -71,6 +77,8 @@ export async function PATCH(
         { status: 400 }
       );
     }
+
+    const body = await req.json();
 
     const updatedProject = await ProjectModel.findOneAndUpdate(
       { _id: id, isDeleted: false },
@@ -92,7 +100,10 @@ export async function PATCH(
     });
   } catch (error: any) {
     return NextResponse.json(
-      { success: false, message: error.message },
+      {
+        success: false,
+        message: error.message || "Failed to update project",
+      },
       { status: 500 }
     );
   }
@@ -103,14 +114,11 @@ export async function PATCH(
  * DELETE: Soft delete project by ID
  * ---------------------------------------
  */
-export async function DELETE(
-  req: Request,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(req: NextRequest, context: ParamsType) {
+  const { id } = await context.params;
+
   try {
     await connectDb();
-
-    const { id } = params;
 
     if (!isValidObjectId(id)) {
       return NextResponse.json(
@@ -138,7 +146,10 @@ export async function DELETE(
     });
   } catch (error: any) {
     return NextResponse.json(
-      { success: false, message: error.message },
+      {
+        success: false,
+        message: error.message || "Failed to delete project",
+      },
       { status: 500 }
     );
   }
