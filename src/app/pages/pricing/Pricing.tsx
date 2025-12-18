@@ -222,7 +222,7 @@ const formatCurrency = (amount:any) => {
               variant={billingCycle === "yearly" ? "default" : "outline"}
               onClick={() => setBillingCycle("yearly")}
             >
-              Annually <span className="ml-2 text-primary">(Save up to 70%)</span>
+              Annually <span className="ml-2 text-gray-400">(Save up to 70%)</span>
             </Button>
           </div>
         </div>

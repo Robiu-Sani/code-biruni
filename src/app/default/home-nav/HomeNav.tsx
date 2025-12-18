@@ -139,7 +139,7 @@ export default function HomeNav() {
               className="w-8 h-8 sm:w-10 sm:h-10 rounded-md transition-transform hover:scale-105"
               priority
             />
-            <span className="font-bold text-xl sm:text-2xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            <span className="font-bold text-xl sm:text-2xl bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               Code Biruni
             </span>
           </Link>
@@ -161,11 +161,11 @@ export default function HomeNav() {
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid gap-3 p-6 w-[500px] lg:w-[600px] lg:grid-cols-2">
+                  <div className="grid gap-3 p-6 w-125 lg:w-150 lg:grid-cols-2">
                     <div className="row-span-3">
                       <NavigationMenuLink asChild>
                         <Link href="/pages/services/our-services">
-                          <div className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-br from-primary/10 to-secondary/10 p-6 no-underline outline-none focus:shadow-md transition-all hover:shadow-lg border">
+                          <div className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-br from-primary/10 to-secondary/10 p-6 no-underline outline-none focus:shadow-md transition-all hover:shadow-lg border">
                             <div className="flex items-center gap-3 mb-4">
                               <Album className="h-12 w-12 text-primary" />
                               <div>
@@ -214,7 +214,7 @@ export default function HomeNav() {
                   Company
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[350px] gap-2 p-4">
+                  <ul className="grid w-87.5 gap-2 p-4">
                     {companyItems.map((item) => (
                       <ListItem
                         key={item.title}
@@ -227,6 +227,14 @@ export default function HomeNav() {
                     ))}
                   </ul>
                 </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/pages/projects" legacyBehavior passHref>
+                  <NavigationMenuLink className={`${navigationMenuTriggerStyle()} font-medium`}>
+                    Projects
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
