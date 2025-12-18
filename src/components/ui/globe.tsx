@@ -5,8 +5,8 @@ import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import countries from "../../data/globe.json";
-// import countries from "../../data/test.json";
+// import countries from "../../data/globe.json";
+import countries from "../../data/test.json";
 declare module "@react-three/fiber" {
   interface ThreeElements {
     threeGlobe: ThreeElements["mesh"] & {
@@ -243,6 +243,7 @@ export function WebGLRendererConfig() {
     gl.setPixelRatio(window.devicePixelRatio);
     gl.setSize(size.width, size.height);
     gl.setClearColor(0xffaaff, 0);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return null;
