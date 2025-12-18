@@ -453,7 +453,7 @@ export default function AllProjects() {
 
               {/* Project Description as Markdown */}
               <div className="prose prose-slate max-w-none dark:prose-invert">
-               <div className="border rounded-lg p-6 bg-white dark:bg-gray-900">
+               <div className="border rounded-lg p-6 whitespace-pre-line bg-white dark:bg-gray-900">
   <ReactMarkdown
     remarkPlugins={[remarkBreaks]}
     components={{
