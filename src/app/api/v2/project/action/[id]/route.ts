@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 import connectDb from "lib/connectdb";
 import ProjectModel from "model/project.model";
 
 // ✅ Helper: validate MongoDB ObjectId
-const isValidObjectId = (id: string) => mongoose.Types.ObjectId.isValid(id);
+const isValidObjectId = (id: string) =>
+  mongoose.Types.ObjectId.isValid(id);
 
 /**
  * ---------------------------------------
@@ -13,7 +14,7 @@ const isValidObjectId = (id: string) => mongoose.Types.ObjectId.isValid(id);
  * ---------------------------------------
  */
 export async function GET(
-  req: NextRequest,
+  req: Request,
   { params }: { params: { id: string } }
 ) {
   try {
@@ -40,10 +41,7 @@ export async function GET(
       );
     }
 
-    return NextResponse.json({
-      success: true,
-      data: project,
-    });
+    return NextResponse.json({ success: true, data: project });
   } catch (error: any) {
     return NextResponse.json(
       { success: false, message: error.message },
@@ -58,7 +56,7 @@ export async function GET(
  * ---------------------------------------
  */
 export async function PATCH(
-  req: NextRequest,
+  req: Request,
   { params }: { params: { id: string } }
 ) {
   try {
@@ -106,7 +104,7 @@ export async function PATCH(
  * ---------------------------------------
  */
 export async function DELETE(
-  req: NextRequest,
+  req: Request,
   { params }: { params: { id: string } }
 ) {
   try {
