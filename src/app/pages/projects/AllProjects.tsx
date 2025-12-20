@@ -27,6 +27,7 @@ import ReactMarkdown from 'react-markdown'
 import { Skeleton } from "@/components/ui/skeleton"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import remarkBreaks from "remark-breaks";
+import Link from 'next/link'
 
 interface Project {
   _id: string;
@@ -246,12 +247,12 @@ export default function AllProjects() {
               <Card
                 key={project._id}
                 className="overflow-hidden py-0 hover:shadow-lg transition-shadow cursor-pointer group"
-                onClick={() => openProjectDialog(project)}
+                
                 onMouseEnter={() => startAutoScroll(project._id)}
                 onMouseLeave={stopAutoScroll}
               >
                 {/* Image Carousel Container */}
-                <div className="relative h-64 overflow-hidden bg-gray-100">
+                <div onClick={() => openProjectDialog(project)} className="relative h-64 overflow-hidden bg-gray-100">
                   {project.images && project.images.length > 0 ? (
                     <div className="relative h-full">
                       {/* Main Image */}
@@ -288,14 +289,14 @@ export default function AllProjects() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="font-bold text-lg truncate">{project.name}</h3>
-                      <div className="flex items-center gap-2 mt-1">
+                      <Link href={project.mainDomain} className="flex items-center gap-2 mt-1">
                         <Globe className="h-3 w-3 text-muted-foreground" />
                         <p className="text-sm text-muted-foreground truncate">
                           {project.mainDomain.trim()}
                         </p>
-                      </div>
+                      </Link>
                     </div>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                    <Link href={project.mainDomain} > <ExternalLink className="h-4 w-4 text-muted-foreground" /></Link>
                   </div>
                 </CardContent>
               </Card>
