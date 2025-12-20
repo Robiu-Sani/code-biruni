@@ -181,12 +181,12 @@ export default function HomeProject() {
         </div>
 
         <div className="text-center mt-12 animate-fade-in-up">
-          <Link href='/pages/company/contact'>
+          <Link href='/pages/projects'>
           <Button
             size="lg"
             className="transition-all hover:scale-105 hover:shadow-md"
           >
-            Contact With Us 
+            View All Projects
             <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button></Link>
         </div>
