@@ -27,7 +27,6 @@ import ReactMarkdown from 'react-markdown'
 import { Skeleton } from "@/components/ui/skeleton"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import remarkBreaks from "remark-breaks";
-import Link from 'next/link'
 
 interface Project {
   _id: string;
@@ -289,14 +288,33 @@ export default function AllProjects() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="font-bold text-lg truncate">{project.name}</h3>
-                      <Link href={project.mainDomain} className="flex items-center gap-2 mt-1">
-                        <Globe className="h-3 w-3 text-muted-foreground" />
-                        <p className="text-sm text-muted-foreground truncate">
-                          {project.mainDomain.trim()}
-                        </p>
-                      </Link>
+                      <a
+  href={
+    project.mainDomain.startsWith("http")
+      ? project.mainDomain
+      : `https://${project.mainDomain}`
+  }
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 mt-1"
+>
+  <Globe className="h-3 w-3 text-muted-foreground" />
+  <p className="text-sm text-muted-foreground truncate">
+    {project.mainDomain.trim()}
+  </p>
+</a>
+
                     </div>
-                    <Link href={project.mainDomain} > <ExternalLink className="h-4 w-4 text-muted-foreground" /></Link>
+                   
+
+                   <a
+  href={project.mainDomain}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <ExternalLink className="h-4 w-4 text-muted-foreground" />
+</a>
+
                   </div>
                 </CardContent>
               </Card>
