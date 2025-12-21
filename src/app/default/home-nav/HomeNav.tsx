@@ -347,6 +347,12 @@ export default function HomeNav() {
               />
 
               <MobileNavItem
+                href="/pages/projects"
+                onClick={closeMobileMenu}
+              >
+                Projects
+              </MobileNavItem>
+              <MobileNavItem
                 href="/pages/pricing"
                 onClick={closeMobileMenu}
               >
