@@ -108,7 +108,7 @@ export default function HomeProject() {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section className="py-20 bg-linear-to-b from-background to-muted/20">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -122,7 +122,7 @@ export default function HomeProject() {
 
         {/* Infinite scrolling container */}
         <div className="relative overflow-hidden group">
-          <div className="absolute inset-0 z-10 bg-gradient-to-r from-background via-background/0 to-background w-full h-full pointer-events-none" />
+          <div className="absolute inset-0 z-10 bg-linear-to-r from-background via-background/0 to-background w-full h-full pointer-events-none" />
 
           <div
             ref={sliderRef}
@@ -132,7 +132,7 @@ export default function HomeProject() {
             {duplicatedProjects.map((project, index) => (
               <div
                 key={`${project.id}-${index}`}
-                className="flex-shrink-0 w-[300px] transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg"
+                className="shrink-0 w-75 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg"
               >
                 <Card className="h-full py-0 flex flex-col">
                   <CardHeader className="p-0">
@@ -146,7 +146,7 @@ export default function HomeProject() {
                       />
                     </div>
                   </CardHeader>
-                  <CardContent className="flex-grow">
+                  <CardContent className="grow">
                     <h3 className="font-semibold text-lg mb-2">
                       {project.name}
                     </h3>

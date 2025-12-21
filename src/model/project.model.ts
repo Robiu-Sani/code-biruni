@@ -87,6 +87,11 @@ const ProjectSchema: Schema<IProject> = new Schema(
       required: true,
     },
 
+    positionPoient:{
+      type: Number,
+      default: 0,
+    },
+
     isDeleted: {
       type: Boolean,
       default: false,

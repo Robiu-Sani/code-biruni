@@ -29,6 +29,7 @@ export interface IProject{
         service:string;
         amount:number;
     }[];
+    positionPoient:number;
     images:string[];
     description:string;
     isDeleted:boolean;

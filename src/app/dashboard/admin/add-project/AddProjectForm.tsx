@@ -42,6 +42,10 @@ export default function AddProjectForm() {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [providedServices, setProvidedServices] = useState('');
   const [description, setDescription] = useState('');
+  const [positionPoient, setPositionPoient] = useState<number>(0);
+  const [activeTab, setActiveTab] = useState("basic");
+
+
   
   // Arrays of objects
   const [contacts, setContacts] = useState<Contact[]>([{ name: '', method: '', way: '', numbers: [''] }]);
@@ -72,6 +76,16 @@ export default function AddProjectForm() {
     return newArray;
   });
 };
+
+const tabs = ["basic", "services", "credentials", "media"];
+
+const goToNextTab = () => {
+  const currentIndex = tabs.indexOf(activeTab);
+  if (currentIndex < tabs.length - 1) {
+    setActiveTab(tabs[currentIndex + 1]);
+  }
+};
+
 
 
   const addArrayField = (
@@ -210,6 +224,7 @@ export default function AddProjectForm() {
         address: address.filter(addr => addr.trim() !== ''),
         date: date || new Date(),
         providedServices,
+        positionPoient,
         renualAmount: renualAmount.filter(item => item.service.trim() !== ''),
         images,
         description,
@@ -267,7 +282,7 @@ export default function AddProjectForm() {
           ) : null}
           
           <form onSubmit={handleSubmit}>
-            <Tabs defaultValue="basic" className="w-full">
+            <Tabs defaultValue="basic" onValueChange={setActiveTab} className="w-full">
               <TabsList className="grid w-full grid-cols-4">
                 <TabsTrigger value="basic">Basic Info</TabsTrigger>
                 <TabsTrigger value="services">Services</TabsTrigger>
@@ -311,6 +326,18 @@ export default function AddProjectForm() {
     required
   />
 </div>
+
+<div className="space-y-2">
+  <Label htmlFor="positionPoient">Position Point</Label>
+  <Input
+    id="positionPoient"
+    type="number"
+    value={positionPoient}
+    onChange={(e) => setPositionPoient(Number(e.target.value))}
+    placeholder="Enter position point"
+  />
+</div>
+
 
                   
                   <div className="space-y-2">
@@ -469,6 +496,13 @@ export default function AddProjectForm() {
                     </div>
                   ))}
                 </div>
+
+                <div className="flex justify-end mt-6">
+  <Button type="button" onClick={goToNextTab}>
+    Next
+  </Button>
+</div>
+
               </TabsContent>
               
               {/* Services Tab */}
@@ -627,6 +661,13 @@ export default function AddProjectForm() {
                     </div>
                   ))}
                 </div>
+
+                <div className="flex justify-end mt-6">
+  <Button type="button" onClick={goToNextTab}>
+    Next
+  </Button>
+</div>
+
               </TabsContent>
               
               {/* Credentials Tab */}
@@ -770,6 +811,13 @@ export default function AddProjectForm() {
                     </Card>
                   ))}
                 </div>
+
+                <div className="flex justify-end mt-6">
+  <Button type="button" onClick={goToNextTab}>
+    Next
+  </Button>
+</div>
+
               </TabsContent>
               
               {/* Media Tab */}
@@ -801,14 +849,20 @@ export default function AddProjectForm() {
                     ))}
                   </div>
                 </div>
+
+                  {activeTab === "media" && (
+  <div className="mt-8 flex justify-end">
+    <Button type="submit" disabled={isSubmitting}>
+      {isSubmitting ? 'Creating Project...' : 'Create Project'}
+    </Button>
+  </div>
+)}
+
               </TabsContent>
             </Tabs>
             
-            <div className="mt-8 flex justify-end">
-              <Button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? 'Creating Project...' : 'Create Project'}
-              </Button>
-            </div>
+         
+
           </form>
         </CardContent>
       </Card>

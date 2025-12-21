@@ -42,7 +42,7 @@ export async function GET(req: NextRequest) {
     // 📊 Queries
     const [data, total] = await Promise.all([
       ProjectModel.find(query).select('name mainDomain images description')
-        .sort({ createdAt: -1 })
+        .sort({ positionPoient : -1})
         .skip(skip)
         .limit(limitNumber),
       ProjectModel.countDocuments(query),
