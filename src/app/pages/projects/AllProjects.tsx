@@ -306,14 +306,19 @@ export default function AllProjects() {
 
                     </div>
                    
-
-                   <a
-  href={project.mainDomain}
+                      <a
+  href={
+    project.mainDomain.startsWith("http")
+      ? project.mainDomain
+      : `https://${project.mainDomain}`
+  }
   target="_blank"
   rel="noopener noreferrer"
+  className="flex items-center gap-2 mt-1"
 >
-  <ExternalLink className="h-4 w-4 text-muted-foreground" />
+    <ExternalLink className="h-4 w-4 text-muted-foreground" />
 </a>
+
 
                   </div>
                 </CardContent>
