@@ -194,7 +194,7 @@ const NotFound: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 z-9999999999 min-h-screen w-full overflow-hidden bg-linear-to-br from-gray-50 to-gray-100 dark:from-zinc-900 dark:to-zinc-950">
+    <div className="absolute top-0 left-0 z-9999999999 min-h-screen w-full overflow-hidden bg-linear-to-br from-gray-50 to-gray-100 dark:from-zinc-900 dark:to-zinc-950">
       {/* Background Canvas */}
       <canvas
         ref={canvasRef}
