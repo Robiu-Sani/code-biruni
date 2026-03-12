@@ -23,7 +23,7 @@ export default function TeamBanner() {
   const teamMembers = [
     {
       name: "Rifat Rahman",
-      role: "CEO & Co-founder",
+      role: "CEO ", //& Co-founder
       expertise: ["Product Strategy", "Leadership", "Vision"],
       avatar: "https://i.postimg.cc/CLvCPJVm/649096364-4281095825473912-1713237592401792416-n.jpg",
       social: {
@@ -37,7 +37,7 @@ export default function TeamBanner() {
     },
     {
       name: "Robius Sani",
-      role: "CTO & Co-founder",
+      role: "CTO ", //& Co-founder
       expertise: ["Architecture", "Scalability", "Full Stack"],
       avatar: "https://avatars.githubusercontent.com/u/148758251?v=4",
       social: {
