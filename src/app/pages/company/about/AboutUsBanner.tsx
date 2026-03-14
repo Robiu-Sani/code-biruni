@@ -54,13 +54,13 @@ export default function AboutUsBanner() {
       name: "Shimul Hossain",
       role: "COO",
       icon: <Award className="h-5 w-5 text-amber-500" />,
-      image: "https://i.postimg.cc/HW67dxPr/647548613-1298177328831729-4955942451501221677-n.jpg",
+      image: "https://i.postimg.cc/nLqDJG6z/646348559-2152999638849812-4891187165175593480-n.jpg",
     },
     {
       name: "Dibbayan Datta",
       role: "CMO",
       icon: <Globe className="h-5 w-5 text-green-500" />,
-      image: "https://i.postimg.cc/nLqDJG6z/646348559-2152999638849812-4891187165175593480-n.jpg",
+      image: "https://i.postimg.cc/HW67dxPr/647548613-1298177328831729-4955942451501221677-n.jpg",
     },
   ];
 

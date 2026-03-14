@@ -53,7 +53,7 @@ export default function TeamBanner() {
       name: "Shimul Hossain",
       role: "COO",
       expertise: ["Operations", "Management", "Strategy"],
-      avatar: "https://i.postimg.cc/HW67dxPr/647548613-1298177328831729-4955942451501221677-n.jpg",
+      avatar: "https://i.postimg.cc/nLqDJG6z/646348559-2152999638849812-4891187165175593480-n.jpg",
       social: {
         facebook: "sabbir.simul.7",
         email: "simuls664@gmail.com",
@@ -65,7 +65,7 @@ export default function TeamBanner() {
       name: "Dibbayan Datta",
       role: "CMO",
       expertise: ["Marketing", "Brand Strategy", "Growth"],
-      avatar: "https://i.postimg.cc/nLqDJG6z/646348559-2152999638849812-4891187165175593480-n.jpg",
+      avatar: "https://i.postimg.cc/HW67dxPr/647548613-1298177328831729-4955942451501221677-n.jpg",
       social: {
         facebook: "dibbayan.dutt",
         linkedin: "dibbayan-datta-381783334",
